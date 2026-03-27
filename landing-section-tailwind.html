@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Landing section futuriste bleu metallique pour Studio B0ucher."
+    >
+    <title>Landing Section Futuriste | Studio B0ucher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              midnight: "#050A14",
+              graphite: "#0B1630",
+              steel: "#163E7A",
+              metallic: "#2F6BFF",
+              chrome: "#8CB8FF",
+              cyan: "#5DF2FF",
+              violet: "#7B75FF",
+              silver: "#DCE6F2",
+            },
+            fontFamily: {
+              display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              shell:
+                "0 0 0 1px rgba(140,184,255,0.1), 0 24px 70px rgba(2,7,20,0.52)",
+              glass:
+                "0 0 0 1px rgba(140,184,255,0.1), inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 32px rgba(2,8,24,0.34)",
+              glow:
+                "0 0 0 1px rgba(93,242,255,0.1), 0 0 16px rgba(47,107,255,0.12), 0 12px 30px rgba(2,8,24,0.28)",
+              button:
+                "0 14px 32px rgba(47,107,255,0.28), inset 0 1px 0 rgba(255,255,255,0.18)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: 100vh;
+        font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+        color: #dce6f2;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        background-image:
+          radial-gradient(circle at 10% 18%, rgba(47, 107, 255, 0.2), transparent 20%),
+          radial-gradient(circle at 82% 12%, rgba(93, 242, 255, 0.12), transparent 16%),
+          radial-gradient(circle at 50% 100%, rgba(22, 62, 122, 0.42), transparent 30%),
+          linear-gradient(180deg, #0b1630 0%, #050a14 55%, #02040c 100%);
+      }
+
+      .shell {
+        position: relative;
+        overflow: hidden;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.025);
+        box-shadow: 0 0 0 1px rgba(140, 184, 255, 0.1), 0 24px 70px rgba(2, 7, 20, 0.52);
+      }
+
+      .shell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 18%, transparent 72%, rgba(93, 242, 255, 0.08)),
+          radial-gradient(circle at top right, rgba(47, 107, 255, 0.2), transparent 28%);
+      }
+
+      .glass,
+      .glass-fine {
+        border: 1px solid rgba(140, 184, 255, 0.15);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      .glass {
+        background-color: rgba(255, 255, 255, 0.035);
+        box-shadow: 0 0 0 1px rgba(140, 184, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 32px rgba(2, 8, 24, 0.34);
+      }
+
+      .glass-fine {
+        background-color: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 0 0 1px rgba(93, 242, 255, 0.1), 0 0 16px rgba(47, 107, 255, 0.12), 0 12px 30px rgba(2, 8, 24, 0.28);
+      }
+
+      .metal-edge {
+        position: relative;
+      }
+
+      .metal-edge::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(140, 184, 255, 0.16) 30%, rgba(93, 242, 255, 0.14) 60%, rgba(255, 255, 255, 0.06));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0.9;
+      }
+
+      .micro-lift:hover,
+      .micro-lift:focus-within {
+        transform: translateY(-2px) scale(1.005);
+      }
+
+      .eyebrow {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(140, 184, 255, 0.9);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.03);
+        padding: 0.375rem 0.875rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: rgba(220, 230, 242, 0.88);
+        transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      .tag:hover,
+      .tag:focus-visible {
+        border-color: rgba(140, 184, 255, 0.22);
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 16px rgba(47, 107, 255, 0.1);
+      }
+
+      .metal-btn,
+      .ghost-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+      }
+
+      .metal-btn {
+        color: white;
+        background-image: linear-gradient(135deg, #8cb8ff 0%, #2f6bff 55%, #5df2ff 100%);
+        box-shadow: 0 14px 32px rgba(47, 107, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      .metal-btn:hover,
+      .metal-btn:focus-visible {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(47, 107, 255, 0.34), 0 0 20px rgba(93, 242, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      }
+
+      .ghost-btn {
+        color: #dce6f2;
+        border: 1px solid rgba(140, 184, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.02);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 28px rgba(2, 8, 24, 0.24);
+      }
+
+      .ghost-btn:hover,
+      .ghost-btn:focus-visible {
+        transform: translateY(-2px) scale(1.01);
+        border-color: rgba(93, 242, 255, 0.34);
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 18px rgba(93, 242, 255, 0.12), 0 16px 36px rgba(2, 8, 24, 0.28);
+      }
+
+      .stat {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.04);
+        padding: 0.875rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .stat::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(93, 242, 255, 0.5), transparent 75%);
+        opacity: 0.6;
+      }
+
+      .stat:hover,
+      .stat:focus-within {
+        background-color: rgba(255, 255, 255, 0.055);
+      }
+
+      .focus-ring {
+        outline: none;
+      }
+
+      .focus-ring:focus-visible {
+        box-shadow: 0 0 0 2px #5df2ff, 0 0 0 4px #050a14;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
+      <section class="mx-auto max-w-[1320px]">
+        <div class="shell">
+          <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:140px_140px] opacity-[0.14] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_100%)]"></div>
+
+          <header class="relative z-10 flex flex-wrap items-center gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
+            <a class="inline-flex items-center gap-2 rounded-full focus-ring" href="#" aria-label="Accueil Studio B0ucher">
+              <span class="rounded-full border border-chrome/20 bg-metallic/10 px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.3em] text-chrome">Studio</span>
+              <span class="font-display text-base font-semibold uppercase tracking-[0.22em] text-white sm:text-lg">B0ucher</span>
+            </a>
+
+            <nav class="ml-auto hidden items-center gap-2 md:flex" aria-label="Navigation principale">
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-silver/80 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#">Approche</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-silver/80 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#">Livrable</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-silver/80 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#">Creations</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-silver/80 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#">Contact</a>
+            </nav>
+
+            <a class="metal-btn focus-ring hidden md:inline-flex" href="#">Demarrer</a>
+          </header>
+
+          <div class="relative z-10 grid gap-3.5 px-4 py-4 sm:px-5 lg:grid-cols-[1.06fr_minmax(340px,0.94fr)] lg:gap-4 lg:px-6 lg:py-5">
+            <div class="flex flex-col justify-center">
+              <p class="eyebrow">Studio web pour artisans, restaurants et maisons locales</p>
+              <h1 class="mt-2.5 max-w-[10.2ch] font-display text-[2.8rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.2rem] lg:text-[5rem]">
+                Des sites vitrines qui donnent envie d'entrer, reserver ou appeler.
+              </h1>
+
+              <p class="mt-4 max-w-2xl text-[0.97rem] leading-7 text-silver/90 sm:text-[1.02rem]">
+                Je concois des pages sur mesure pour les activites qui se choisissent
+                autant avec les yeux, l'ambiance et la confiance qu'avec une simple
+                fiche Google. Le fond reste lisible. La forme laisse une vraie trace.
+              </p>
+
+              <p class="mt-3.5 max-w-2xl text-[0.97rem] leading-7 text-silver/76 sm:text-[1.02rem]">
+                L'idee n'est pas de faire plus de bruit. L'idee est de clarifier
+                votre presence, de rendre votre univers memorable et de donner envie
+                de passer a l'action en quelques secondes.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2.5">
+                <a class="metal-btn focus-ring" href="#">Voir les projets</a>
+                <a class="ghost-btn focus-ring" href="#">Parler du projet</a>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tag">Positionnement clair</span>
+                <span class="tag">Direction visuelle sur mesure</span>
+                <span class="tag">Developpement propre et responsive</span>
+              </div>
+            </div>
+
+            <div class="lg:pt-0.5">
+              <div class="glass metal-edge micro-lift relative isolate overflow-hidden rounded-[24px] px-3.5 py-3.5 sm:px-4">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(93,242,255,0.16),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]"></div>
+                <div class="absolute -bottom-3 right-3 h-20 w-20 rotate-[10deg] rounded-[24px] border border-chrome/15 bg-[linear-gradient(135deg,rgba(140,184,255,0.42),rgba(93,242,255,0.08))]"></div>
+
+                <div class="relative z-10">
+                  <span class="inline-flex rounded-full border border-chrome/15 bg-white/[0.04] px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.26em] text-chrome">
+                    Atelier numerique
+                  </span>
+
+                  <img
+                    class="mx-auto mt-2.5 w-full max-w-[268px] drop-shadow-[0_16px_40px_rgba(0,0,0,0.34)]"
+                    src="assets/hero-illustration.svg"
+                    alt="Illustration d'un bureau creatif avec ordinateur portable, carnet, telephone et elements de design."
+                  >
+
+                  <div class="mt-3 space-y-2">
+                    <article class="glass-fine metal-edge micro-lift rounded-[18px] px-3.5 py-2.5">
+                      <p class="eyebrow">Pour qui</p>
+                      <p class="mt-1 text-[0.92rem] font-semibold leading-snug text-white sm:text-[0.98rem]">
+                        Artisans, restaurants, lieux et maisons qui ont du caractere
+                      </p>
+                    </article>
+
+                    <article class="glass-fine metal-edge micro-lift rounded-[18px] px-3.5 py-2.5">
+                      <p class="eyebrow">Promesse</p>
+                      <p class="mt-1 text-[0.92rem] font-semibold leading-snug text-white sm:text-[0.98rem]">
+                        Faire ressentir quelque chose avant meme le premier clic
+                      </p>
+                    </article>
+
+                    <article class="glass-fine metal-edge micro-lift rounded-[18px] px-3.5 py-2.5">
+                      <p class="eyebrow">Objectif</p>
+                      <p class="mt-1 text-[0.92rem] font-semibold leading-snug text-white sm:text-[0.98rem]">
+                        Un site qui se comprend en moins de dix secondes
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 grid gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
+            <article class="stat">
+              <p class="font-display text-[2rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.3rem]">3</p>
+              <p class="mt-1 text-[0.82rem] leading-5 text-silver/72">concepts deja en ligne pour montrer des ambiances reelles</p>
+            </article>
+
+            <article class="stat">
+              <p class="font-display text-[2rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.3rem]">1 cap</p>
+              <p class="mt-1 text-[0.82rem] leading-5 text-silver/72">clarifier, rassurer et rendre le contact evident</p>
+            </article>
+
+            <article class="stat">
+              <p class="font-display text-[2rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.3rem]">100 %</p>
+              <p class="mt-1 text-[0.82rem] leading-5 text-silver/72">responsive, lisible et pense mobile d'abord</p>
+            </article>
+
+            <article class="stat">
+              <p class="font-display text-[2rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.3rem]">sur mesure</p>
+              <p class="mt-1 text-[0.82rem] leading-5 text-silver/72">pas de theme plaque sur une activite qui merite mieux</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

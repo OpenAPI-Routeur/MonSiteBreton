@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Studio B0ucher concoit des sites vitrines sur mesure dans une direction cyber-moderne, claire, premium et futuriste."
+    >
+    <title>Studio B0ucher | Vitrine cyber-moderne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              night: {
+                950: "#040816",
+                900: "#071326",
+                800: "#0b1b33",
+                700: "#10284c",
+              },
+              cyber: {
+                500: "#2c6bff",
+                400: "#67e8f9",
+                300: "#9bd7ff",
+                200: "#dce8f6",
+                100: "#eef5ff",
+              },
+              steel: {
+                300: "#c8d8ee",
+                200: "#dfe9f7",
+                100: "#f8fbff",
+              },
+            },
+            fontFamily: {
+              display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              shell:
+                "0 0 0 1px rgba(191,219,254,0.08), 0 30px 100px rgba(3,8,24,0.55)",
+              panel:
+                "0 0 0 1px rgba(147,197,253,0.1), inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 50px rgba(5,12,28,0.38)",
+              glow:
+                "0 0 0 1px rgba(103,232,249,0.1), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 36px rgba(44,107,255,0.12), 0 18px 44px rgba(4,8,22,0.35)",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          @apply min-h-screen bg-night-950 font-sans text-cyber-100 antialiased;
+          background-image:
+            radial-gradient(circle at 12% 18%, rgba(44, 107, 255, 0.22), transparent 22%),
+            radial-gradient(circle at 82% 10%, rgba(103, 232, 249, 0.16), transparent 18%),
+            radial-gradient(circle at 50% 100%, rgba(16, 40, 76, 0.5), transparent 32%),
+            linear-gradient(180deg, #071326 0%, #040816 58%, #02050f 100%);
+        }
+
+        ::selection {
+          @apply bg-cyber-500/30 text-white;
+        }
+      }
+
+      @layer utilities {
+        .skip-link {
+          @apply absolute left-4 top-[-4rem] z-50 rounded-full border border-cyber-300/30 bg-night-900/95 px-4 py-3 text-sm font-semibold text-white transition-all duration-200;
+        }
+
+        .skip-link:focus {
+          @apply top-4;
+        }
+
+        .cyber-shell {
+          @apply relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-shell;
+        }
+
+        .cyber-shell::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(110deg, rgba(255, 255, 255, 0.08), transparent 18%, transparent 72%, rgba(103, 232, 249, 0.08)),
+            radial-gradient(circle at top right, rgba(44, 107, 255, 0.18), transparent 28%);
+          pointer-events: none;
+        }
+
+        .panel-metal {
+          @apply border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-panel;
+        }
+
+        .panel-glass {
+          @apply border border-cyber-300/15 bg-white/[0.03] backdrop-blur-2xl shadow-glow;
+        }
+
+        .section-title {
+          @apply font-display text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem] lg:text-[2.9rem];
+        }
+
+        .compact-label {
+          @apply text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-cyber-300/90;
+        }
+
+        .pill {
+          @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-cyber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
+        }
+
+        .metal-button {
+          @apply inline-flex items-center justify-center rounded-[18px] px-6 py-3 text-sm font-semibold text-white transition duration-300 ease-out;
+          background-image: linear-gradient(135deg, rgba(93, 162, 255, 0.98), rgba(44, 107, 255, 0.98) 55%, rgba(103, 232, 249, 0.9));
+          box-shadow:
+            0 12px 30px rgba(44, 107, 255, 0.28),
+            inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .metal-button:hover,
+        .metal-button:focus-visible {
+          transform: translateY(-2px);
+          box-shadow:
+            0 16px 36px rgba(44, 107, 255, 0.34),
+            0 0 24px rgba(103, 232, 249, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.24);
+        }
+
+        .outline-button {
+          @apply inline-flex items-center justify-center rounded-[18px] border border-cyber-300/20 bg-white/[0.02] px-6 py-3 text-sm font-semibold text-cyber-100 transition duration-300 ease-out;
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.08),
+            0 12px 28px rgba(2, 8, 20, 0.28);
+        }
+
+        .outline-button:hover,
+        .outline-button:focus-visible {
+          transform: translateY(-2px);
+          border-color: rgba(103, 232, 249, 0.34);
+          background: rgba(255, 255, 255, 0.05);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            0 0 22px rgba(103, 232, 249, 0.12),
+            0 16px 36px rgba(2, 8, 20, 0.32);
+        }
+
+        .stat-card {
+          @apply relative overflow-hidden border border-white/10 bg-white/[0.05] px-4 py-4 sm:px-5 sm:py-5;
+        }
+
+        .stat-card::before {
+          content: "";
+          position: absolute;
+          inset: 0 auto auto 0;
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(90deg, rgba(103, 232, 249, 0.5), transparent 70%);
+          opacity: 0.55;
+        }
+
+        .scan-hover {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .scan-hover::after {
+          content: "";
+          position: absolute;
+          top: -15%;
+          left: -36%;
+          width: 24%;
+          height: 130%;
+          opacity: 0;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+          transform: skewX(-22deg);
+          transition:
+            left 0.55s ease,
+            opacity 0.55s ease;
+          pointer-events: none;
+        }
+
+        .scan-hover:hover::after,
+        .scan-hover:focus-within::after {
+          left: 118%;
+          opacity: 1;
+        }
+
+        .reveal {
+          opacity: 0;
+          transform: translateY(18px);
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+        }
+
+        .reveal.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .grid-overlay {
+          background-image:
+            linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+          background-size: 120px 120px;
+          mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+        }
+
+        .focus-ring {
+          @apply outline-none ring-0;
+        }
+
+        .focus-ring:focus-visible {
+          @apply ring-2 ring-cyber-400 ring-offset-2 ring-offset-night-950;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="grid-overlay absolute inset-0 opacity-25"></div>
+      <div class="absolute left-[-12rem] top-16 h-72 w-72 rounded-full bg-cyber-500/20 blur-[120px]"></div>
+      <div class="absolute right-[-10rem] top-24 h-64 w-64 rounded-full bg-cyber-400/12 blur-[110px]"></div>
+      <div class="absolute bottom-[-12rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyber-500/14 blur-[130px]"></div>
+    </div>
+
+    <main id="contenu" class="px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
+      <section class="mx-auto max-w-[1320px]">
+        <div class="cyber-shell">
+          <header class="relative z-10 flex flex-wrap items-center gap-3 border-b border-white/10 px-4 py-3 sm:px-6">
+            <a class="group inline-flex items-center gap-2 rounded-full focus-ring" href="#contenu" aria-label="Accueil Studio B0ucher">
+              <span class="rounded-full border border-cyber-300/20 bg-cyber-500/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-cyber-300">Studio</span>
+              <span class="font-display text-base font-semibold uppercase tracking-[0.2em] text-white sm:text-lg">B0ucher</span>
+            </a>
+
+            <button
+              class="ml-auto inline-flex items-center rounded-full border border-cyber-300/20 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-cyber-100 focus-ring md:hidden"
+              type="button"
+              aria-expanded="false"
+              aria-controls="site-nav"
+              data-nav-toggle
+            >
+              Menu
+            </button>
+
+            <nav
+              class="hidden w-full flex-col gap-2 pt-2 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-2 md:pt-0"
+              id="site-nav"
+              aria-label="Navigation principale"
+            >
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Creations</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#contact">Contact</a>
+            </nav>
+
+            <a class="metal-button focus-ring hidden md:inline-flex" href="#contact">Demarrer</a>
+          </header>
+
+          <div class="relative z-10 grid gap-5 px-4 py-5 sm:px-6 lg:grid-cols-[1.04fr_minmax(360px,0.96fr)] lg:gap-6 lg:px-7 lg:py-6">
+            <div class="reveal">
+              <p class="compact-label">Studio web pour artisans, restaurants et maisons locales</p>
+              <h1 class="mt-3 max-w-[10.4ch] font-display text-[2.8rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5.4rem]">
+                Des vitrines numeriques qui donnent envie d'entrer.
+              </h1>
+              <p class="mt-5 max-w-2xl text-base leading-8 text-cyber-200/88 sm:text-lg">
+                Je concois des pages sur mesure pour les activites qui se choisissent
+                autant avec les yeux, l'ambiance et la confiance qu'avec une simple
+                fiche Google. Le fond reste net. La forme laisse une vraie aura.
+              </p>
+
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a class="metal-button scan-hover focus-ring" href="#creations">Voir les projets</a>
+                <a class="outline-button scan-hover focus-ring" href="#contact">Parler du projet</a>
+              </div>
+            </div>
+
+            <div class="reveal lg:pt-1">
+              <div class="panel-metal relative isolate overflow-hidden rounded-[32px] border border-cyber-300/15 bg-[linear-gradient(155deg,rgba(19,39,69,0.96),rgba(11,27,51,0.92)_48%,rgba(7,19,38,0.98))] px-4 py-4 shadow-[0_34px_90px_rgba(2,8,24,0.54),0_0_0_1px_rgba(103,232,249,0.12),inset_0_1px_0_rgba(255,255,255,0.08)] sm:px-5">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(103,232,249,0.24),transparent_28%),radial-gradient(circle_at_18%_24%,rgba(44,107,255,0.24),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]"></div>
+                <div class="absolute inset-[1px] rounded-[31px] border border-white/6" aria-hidden="true"></div>
+                <div class="absolute -left-10 top-20 h-36 w-24 rotate-[18deg] bg-cyber-400/10 blur-[46px]" aria-hidden="true"></div>
+                <div class="absolute -right-6 top-[-2rem] h-40 w-40 rounded-full bg-cyber-400/18 blur-[68px]" aria-hidden="true"></div>
+                <div class="absolute bottom-[-4rem] right-[-1rem] h-52 w-40 rounded-full bg-cyber-500/20 blur-[72px]" aria-hidden="true"></div>
+                <div class="absolute right-5 top-5 h-20 w-20 rounded-full border border-white/10 bg-white/[0.03] blur-[0.2px]" aria-hidden="true"></div>
+
+                <div class="relative z-10">
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="inline-flex rounded-full border border-cyber-300/20 bg-white/[0.05] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyber-300 shadow-[0_0_24px_rgba(103,232,249,0.08)]">
+                      Atelier numerique
+                    </span>
+                    <span class="hidden rounded-full border border-cyber-300/20 bg-cyber-400/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-cyber-100/92 shadow-[0_0_22px_rgba(103,232,249,0.16)] sm:inline-flex">
+                      Signal premium
+                    </span>
+                  </div>
+
+                  <div class="relative mt-4 overflow-hidden rounded-[26px] border border-cyber-300/16 bg-[radial-gradient(circle_at_50%_0%,rgba(103,232,249,0.22),transparent_36%),linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_44px_rgba(4,8,22,0.26)]">
+                    <div class="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyber-300/65 to-transparent" aria-hidden="true"></div>
+                    <div class="absolute left-4 top-5 h-16 w-16 rounded-full border border-cyber-300/10 bg-cyber-400/8 blur-[0.5px]" aria-hidden="true"></div>
+                    <div class="absolute right-4 top-4 hidden flex-wrap justify-end gap-2 sm:flex" aria-hidden="true">
+                      <span class="rounded-full border border-white/10 bg-night-900/75 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-100">
+                        3 concepts live
+                      </span>
+                      <span class="rounded-full border border-cyber-300/15 bg-cyber-500/12 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-200">
+                        Responsive first
+                      </span>
+                    </div>
+
+                    <img
+                      class="relative mx-auto w-full max-w-[320px] drop-shadow-[0_26px_54px_rgba(0,0,0,0.42)]"
+                      src="assets/hero-illustration.svg"
+                      alt="Illustration d'un bureau creatif avec ordinateur portable, carnet, telephone et elements de design."
+                    >
+                  </div>
+
+                  <div class="mt-4 grid gap-3">
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
+                      <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-400 via-cyber-300 to-transparent" aria-hidden="true"></div>
+                      <p class="compact-label pl-4">Pour qui</p>
+                      <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
+                        Artisans, restaurants, lieux et maisons qui ont du caractere
+                      </p>
+                    </article>
+
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-cyber-300/20 bg-[linear-gradient(135deg,rgba(103,232,249,0.12),rgba(255,255,255,0.04))] px-4 py-3.5 shadow-[0_18px_40px_rgba(44,107,255,0.18),inset_0_1px_0_rgba(255,255,255,0.08)]">
+                      <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-300 via-white/70 to-transparent" aria-hidden="true"></div>
+                      <p class="compact-label pl-4">Promesse</p>
+                      <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
+                        Faire ressentir quelque chose avant meme le premier clic
+                      </p>
+                    </article>
+
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.025))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
+                      <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-500 via-cyber-300 to-transparent" aria-hidden="true"></div>
+                      <p class="compact-label pl-4">Objectif</p>
+                      <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
+                        Un site qui se comprend en moins de dix secondes
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 grid gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
+            <article class="stat-card">
+              <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">3</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">concepts deja en ligne pour montrer des ambiances reelles</p>
+            </article>
+            <article class="stat-card">
+              <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">1 cap</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">clarifier, rassurer et rendre le contact evident</p>
+            </article>
+            <article class="stat-card">
+              <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">100 %</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">responsive, lisible et pense mobile d'abord</p>
+            </article>
+            <article class="stat-card">
+              <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">sur mesure</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">pas de theme plaque sur une activite qui merite mieux</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-8 max-w-[1320px]" id="creations">
+        <div class="reveal max-w-3xl">
+          <p class="compact-label">Creations</p>
+          <h2 class="section-title mt-3">Trois concepts en ligne dans une lecture plus premium.</h2>
+          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
+            Les cartes projet restent immersives, mais elles adoptent maintenant
+            une presentation plus legere, plus technologique et plus coherente avec
+            le reste du systeme visuel.
+          </p>
+        </div>
+
+        <div class="mt-4 grid gap-4 lg:grid-cols-3">
+          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+            <a
+              class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
+              href="https://b0uch3r.github.io/quai-ouest/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(44,107,255,0.25),transparent_65%)]"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.2),transparent_26%),linear-gradient(135deg,#10284c,#2c6bff_55%,#9bd7ff)]"></div>
+              <img
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                src="assets/projects/quai-ouest-thumbnail.png"
+                alt="Miniature du concept Quai Ouest"
+                loading="lazy"
+              >
+              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+                Concept 01
+              </span>
+            </a>
+            <div class="flex flex-1 flex-col px-5 py-5">
+              <div class="lg:min-h-[88px]">
+                <p class="compact-label">Restaurant / front de mer</p>
+                <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">Quai Ouest</h3>
+              </div>
+              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+                Une vitrine plus immersive, plus atmospherique, qui fait sentir le
+                lieu, la lumiere et le rythme avant le contenu detaille.
+              </p>
+              <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Immersion visuelle</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Ambiance marquee</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Lecture detendue</span>
+              </div>
+              <div class="mt-auto pt-4">
+                <a class="outline-button focus-ring w-full" href="https://b0uch3r.github.io/quai-ouest/" target="_blank" rel="noreferrer">Voir le projet</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+            <a
+              class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
+              href="https://lapetitfolie.github.io/restaurant/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(103,232,249,0.18),transparent_65%)]"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_22%),linear-gradient(135deg,#1c2d59,#4977ff_58%,#dce8f6)]"></div>
+              <img
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                src="assets/projects/la-petite-folie-thumbnail.png"
+                alt="Miniature du concept La Petite Folie"
+                loading="lazy"
+              >
+              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+                Concept 02
+              </span>
+            </a>
+            <div class="flex flex-1 flex-col px-5 py-5">
+              <div class="lg:min-h-[88px]">
+                <p class="compact-label">Restaurant / chaleur editoriale</p>
+                <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Petite Folie</h3>
+              </div>
+              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+                Une direction plus elegante, plus editoriale, qui combine chaleur,
+                confort et raffinement dans une interface plus douce.
+              </p>
+              <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Ton premium</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Parcours rassurant</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Palette expressive</span>
+              </div>
+              <div class="mt-auto pt-4">
+                <a class="outline-button focus-ring w-full" href="https://lapetitfolie.github.io/restaurant/" target="_blank" rel="noreferrer">Voir le projet</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+            <a
+              class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
+              href="https://boulangeriekreisker.github.io/boulangerie/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(44,107,255,0.22),transparent_65%)]"></div>
+              <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent),linear-gradient(135deg,#071326,#214089_58%,#67e8f9)]"></div>
+              <img
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                src="assets/projects/kreisker-thumbnail.png"
+                alt="Miniature du concept La Boulangerie du Kreisker"
+                loading="lazy"
+              >
+              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+                Concept 03
+              </span>
+            </a>
+            <div class="flex flex-1 flex-col px-5 py-5">
+              <div class="lg:min-h-[88px]">
+                <p class="compact-label">Boulangerie / commerce artisanal</p>
+                <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Boulangerie du Kreisker</h3>
+              </div>
+              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+                Une vitrine plus directe et plus claire, qui met en avant le
+                produit, l'identite locale et l'intention de marque.
+              </p>
+              <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Univers gourmand</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Offre lisible</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Identite locale</span>
+              </div>
+              <div class="mt-auto pt-4">
+                <a class="outline-button focus-ring w-full" href="https://boulangeriekreisker.github.io/boulangerie/" target="_blank" rel="noreferrer">Voir le projet</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-8 max-w-[1320px]" id="approche">
+        <div class="reveal max-w-3xl">
+          <p class="compact-label">Approche</p>
+          <h2 class="section-title mt-3">Un bon site vitrine doit etre net, incarne et desire.</h2>
+          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
+            Le redesign part d'une logique simple : plus de clarte, moins de masse
+            visuelle, plus de precision et une vraie signature high-tech. On garde
+            l'effet sur mesure, mais on le traduit avec une matiere visuelle plus
+            futuriste et plus premium.
+          </p>
+        </div>
+
+        <div class="mt-4 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+          <article class="reveal panel-metal rounded-[26px] px-5 py-5 sm:px-6 scan-hover">
+            <p class="compact-label">Cap</p>
+            <h3 class="mt-3 max-w-[18ch] font-display text-2xl font-semibold tracking-[-0.05em] text-white sm:text-[2.1rem]">
+              Une interface qui fait ressentir de la maitrise avant meme la premiere lecture.
+            </h3>
+            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
+              L'ambiance devient plus cyber-luxury : fond nuit profond, lueurs
+              metalliques, surfaces en verre, accents bleu electrique et details
+              fins. Le tout reste clair, lisible et aere.
+            </p>
+          </article>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <article class="reveal panel-glass rounded-[24px] px-5 py-4 scan-hover">
+              <p class="compact-label">Lecture</p>
+              <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
+                Une hierarchie plus propre
+              </h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Plus de contraste, plus de blancs, plus d'alignement et moins de
+                ruptures lourdes entre les blocs.
+              </p>
+            </article>
+
+            <article class="reveal panel-glass rounded-[24px] px-5 py-4 scan-hover">
+              <p class="compact-label">Texture</p>
+              <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
+                Verre, metal, lueur
+              </h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Les cartes deviennent plus fines, avec des bordures metalliques,
+                un glow bleu leger et un fond plus transluscide.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-8 max-w-[1320px]" id="cadre">
+        <div class="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+          <div class="reveal panel-metal rounded-[26px] px-5 py-5 sm:px-6">
+            <p class="compact-label">Cadre</p>
+            <h2 class="section-title mt-3 max-w-[12ch]">Un projet court, clair et sans tunnel.</h2>
+            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
+              On part d'une activite reelle, d'une intention commerciale et d'un
+              ton visuel. Ensuite on compose, on affine et on met en ligne une
+              presence deja haut de gamme.
+            </p>
+
+            <ul class="mt-5 space-y-3">
+              <li class="panel-glass rounded-[20px] px-4 py-3">
+                <p class="compact-label">01</p>
+                <p class="mt-1 text-sm font-semibold text-white">On pose le cap : offre, cible, preuves et angle principal.</p>
+              </li>
+              <li class="panel-glass rounded-[20px] px-4 py-3">
+                <p class="compact-label">02</p>
+                <p class="mt-1 text-sm font-semibold text-white">On choisit une voix visuelle : typographie, densite, texture et rythme.</p>
+              </li>
+              <li class="panel-glass rounded-[20px] px-4 py-3">
+                <p class="compact-label">03</p>
+                <p class="mt-1 text-sm font-semibold text-white">On garde un systeme evolutif : la base peut accueillir la suite sans rupture.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+              <p class="compact-label">01</p>
+              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Cadrer</h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Clarifier le message, la cible, les preuves et l'action que la page
+                doit rendre naturelle.
+              </p>
+            </article>
+
+            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+              <p class="compact-label">02</p>
+              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Composer</h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Construire une direction plus nette, plus high-tech et plus coherente
+                sur chaque bloc.
+              </p>
+            </article>
+
+            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+              <p class="compact-label">03</p>
+              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Developper</h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Integrer proprement, garantir la lisibilite et garder un rendu
+                solide en desktop comme en mobile.
+              </p>
+            </article>
+
+            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+              <p class="compact-label">04</p>
+              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Lancer</h3>
+              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+                Ajuster les derniers details et publier une vitrine deja premium,
+                claire et memorable.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-8 max-w-[1320px] pb-6" id="contact">
+        <div class="reveal relative overflow-hidden rounded-[28px] border border-cyber-300/15 bg-[linear-gradient(135deg,rgba(4,8,22,0.94),rgba(16,40,76,0.92))] px-5 py-6 shadow-shell sm:px-6">
+          <div class="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top_right,rgba(103,232,249,0.2),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(44,107,255,0.26),transparent_36%)]"></div>
+          <div class="relative z-10 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p class="compact-label">Contact</p>
+              <h2 class="section-title mt-3 max-w-[14ch]">
+                Une vitrine haut de gamme qui reste claire, humaine et sur mesure.
+              </h2>
+              <p class="mt-3 max-w-3xl text-base leading-8 text-cyber-200/76 sm:text-lg">
+                Le redesign garde le fond artisanal, mais il l'exprime dans une
+                matiere plus premium, plus lumineuse et plus contemporaine. Si une
+                activite a du caractere, elle peut aussi avoir une presence digitale
+                qui respire la maitrise.
+              </p>
+            </div>
+
+            <div class="grid gap-3">
+              <a
+                class="metal-button focus-ring min-w-[240px] justify-center"
+                href="mailto:bonjour@votrestudio.fr?subject=Parlons%20de%20mon%20site%20cyber"
+              >
+                Parler du projet
+              </a>
+              <p class="max-w-[260px] text-sm leading-6 text-cyber-200/66">
+                Adresse a personnaliser avant mise en ligne :
+                <strong class="font-semibold text-white">bonjour@votrestudio.fr</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const navToggle = document.querySelector("[data-nav-toggle]");
+      const siteNav = document.querySelector("#site-nav");
+
+      if (navToggle && siteNav) {
+        const syncNavState = (isOpen) => {
+          navToggle.setAttribute("aria-expanded", String(isOpen));
+          navToggle.textContent = isOpen ? "Fermer" : "Menu";
+          siteNav.classList.toggle("hidden", !isOpen && window.innerWidth < 768);
+        };
+
+        navToggle.addEventListener("click", () => {
+          const expanded = navToggle.getAttribute("aria-expanded") === "true";
+          syncNavState(!expanded);
+        });
+
+        siteNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => syncNavState(false));
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            siteNav.classList.remove("hidden");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.textContent = "Menu";
+          } else if (navToggle.getAttribute("aria-expanded") !== "true") {
+            siteNav.classList.add("hidden");
+          }
+        });
+      }
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window && revealElements.length > 0) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18 }
+        );
+
+        revealElements.forEach((element) => observer.observe(element));
+      } else {
+        revealElements.forEach((element) => element.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>
