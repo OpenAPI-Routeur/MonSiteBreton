@@ -206,7 +206,7 @@
           </p>
         </div>
 
-        <div class="mt-4 grid gap-4 lg:grid-cols-3">
+        <div class="mt-4 grid gap-4 lg:grid-cols-3 lg:items-stretch">
           <article class="reveal stagger-1 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
@@ -216,20 +216,23 @@
             >
               <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(44,107,255,0.25),transparent_65%)]"></div>
               <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.2),transparent_26%),linear-gradient(135deg,#10284c,#2c6bff_55%,#9bd7ff)]"></div>
-              <img
-                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                src="assets/projects/quai-ouest-thumbnail.webp"
-                alt="Miniature du concept Quai Ouest"
-                width="1440"
-                height="731"
-                loading="eager"
-                decoding="async"
-              >
+              <picture>
+                <source srcset="assets/projects/quai-ouest-thumbnail.webp" type="image/webp">
+                <img
+                  class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                  src="assets/projects/quai-ouest-thumbnail-fallback.png"
+                  alt="Miniature du concept Quai Ouest"
+                  width="1440"
+                  height="731"
+                  loading="eager"
+                  decoding="async"
+                >
+              </picture>
               <span class="relative z-10 rounded-full border border-white/[0.15] bg-night-900/[0.65] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 01
               </span>
             </a>
-            <div class="flex flex-1 flex-col px-5 py-5">
+            <div class="grid flex-1 grid-rows-[auto_auto_auto_1fr_auto] px-5 py-5">
               <div class="lg:min-h-[88px]">
                 <p class="compact-label">Restaurant / front de mer</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">Quai Ouest</h3>
@@ -249,7 +252,7 @@
             </div>
           </article>
 
-          <article class="reveal stagger-2 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover lg:mt-10">
+          <article class="reveal stagger-2 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
               href="https://lapetitfolie.github.io/restaurant/"
@@ -271,7 +274,7 @@
                 Concept 02
               </span>
             </a>
-            <div class="flex flex-1 flex-col px-5 py-5">
+            <div class="grid flex-1 grid-rows-[auto_auto_auto_1fr_auto] px-5 py-5">
               <div class="lg:min-h-[88px]">
                 <p class="compact-label">Restaurant / chaleur &eacute;ditoriale</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Petite Folie</h3>
@@ -291,7 +294,7 @@
             </div>
           </article>
 
-          <article class="reveal stagger-3 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover lg:mt-4">
+          <article class="reveal stagger-3 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
               href="https://boulangeriekreisker.github.io/boulangerie/"
@@ -313,7 +316,7 @@
                 Concept 03
               </span>
             </a>
-            <div class="flex flex-1 flex-col px-5 py-5">
+            <div class="grid flex-1 grid-rows-[auto_auto_auto_1fr_auto] px-5 py-5">
               <div class="lg:min-h-[88px]">
                 <p class="compact-label">Boulangerie / commerce artisanal</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Boulangerie du Kreisker</h3>
