@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Studio B0ucher concoit des sites vitrines sur mesure dans une direction cyber-moderne, claire, premium et futuriste."
+      content="Studio B0ucher con&ccedil;oit des sites vitrines sur mesure pour artisans, restaurants et maisons locales, avec une direction claire, premium et responsive."
     >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#090b12">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Studio B0ucher">
+    <meta property="og:title" content="Studio B0ucher | Vitrine cyber-moderne">
+    <meta property="og:description" content="Studio B0ucher con&ccedil;oit des sites vitrines sur mesure pour artisans, restaurants et maisons locales, avec une direction claire, premium et responsive.">
+    <meta property="og:url" content="https://openapi-routeur.github.io/MonSiteBreton/">
+    <meta property="og:image" content="https://openapi-routeur.github.io/MonSiteBreton/assets/og-studio-b0ucher.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Aper&ccedil;u Studio B0ucher dans une identit&eacute; cyber-moderne premium.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Studio B0ucher | Vitrine cyber-moderne">
+    <meta name="twitter:description" content="Studio B0ucher con&ccedil;oit des sites vitrines sur mesure pour artisans, restaurants et maisons locales, avec une direction claire, premium et responsive.">
+    <meta name="twitter:image" content="https://openapi-routeur.github.io/MonSiteBreton/assets/og-studio-b0ucher.png">
+    <meta name="twitter:image:alt" content="Aper&ccedil;u Studio B0ucher dans une identit&eacute; cyber-moderne premium.">
     <title>Studio B0ucher | Vitrine cyber-moderne</title>
+    <link rel="canonical" href="https://openapi-routeur.github.io/MonSiteBreton/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
+    <link rel="preload" as="image" href="assets/hero-illustration.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,35 +48,38 @@
           extend: {
             colors: {
               night: {
-                950: "#040816",
-                900: "#071326",
-                800: "#0b1b33",
-                700: "#10284c",
+                950: "rgb(var(--night-950) / <alpha-value>)",
+                900: "rgb(var(--night-900) / <alpha-value>)",
+                800: "rgb(var(--night-800) / <alpha-value>)",
+                700: "rgb(var(--night-700) / <alpha-value>)",
               },
               cyber: {
-                500: "#2c6bff",
-                400: "#67e8f9",
-                300: "#9bd7ff",
-                200: "#dce8f6",
-                100: "#eef5ff",
+                500: "rgb(var(--cyber-500) / <alpha-value>)",
+                400: "rgb(var(--cyber-400) / <alpha-value>)",
+                300: "rgb(var(--cyber-300) / <alpha-value>)",
+                200: "rgb(var(--cyber-200) / <alpha-value>)",
+                100: "rgb(var(--cyber-100) / <alpha-value>)",
+              },
+              signal: {
+                500: "rgb(var(--signal-500) / <alpha-value>)",
+                400: "rgb(var(--signal-400) / <alpha-value>)",
+                300: "rgb(var(--signal-300) / <alpha-value>)",
               },
               steel: {
-                300: "#c8d8ee",
-                200: "#dfe9f7",
-                100: "#f8fbff",
+                300: "rgb(var(--steel-300) / <alpha-value>)",
+                200: "rgb(var(--steel-200) / <alpha-value>)",
+                100: "rgb(var(--steel-100) / <alpha-value>)",
               },
             },
             fontFamily: {
-              display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
-              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: ["Gloock", "Times New Roman", "serif"],
+              sans: ["IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+              accent: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
             },
             boxShadow: {
-              shell:
-                "0 0 0 1px rgba(191,219,254,0.08), 0 30px 100px rgba(3,8,24,0.55)",
-              panel:
-                "0 0 0 1px rgba(147,197,253,0.1), inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 50px rgba(5,12,28,0.38)",
-              glow:
-                "0 0 0 1px rgba(103,232,249,0.1), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 36px rgba(44,107,255,0.12), 0 18px 44px rgba(4,8,22,0.35)",
+              shell: "var(--shadow-shell)",
+              panel: "var(--shadow-panel)",
+              glow: "var(--shadow-glow)",
             },
           },
         },
@@ -57,17 +87,79 @@
     </script>
     <style type="text/tailwindcss">
       @layer base {
+        :root {
+          --night-950: 6 8 13;
+          --night-900: 11 16 27;
+          --night-800: 18 27 43;
+          --night-700: 29 42 65;
+          --cyber-500: 202 126 76;
+          --cyber-400: 244 195 137;
+          --cyber-300: 246 225 198;
+          --cyber-200: 223 208 187;
+          --cyber-100: 248 239 229;
+          --signal-500: 67 114 255;
+          --signal-400: 125 232 255;
+          --signal-300: 188 243 255;
+          --steel-300: 199 206 218;
+          --steel-200: 222 227 235;
+          --steel-100: 247 243 237;
+          --shadow-shell:
+            0 0 0 1px rgba(246, 225, 198, 0.08),
+            0 36px 120px rgba(2, 4, 10, 0.66),
+            0 0 80px rgba(202, 126, 76, 0.08);
+          --shadow-panel:
+            0 0 0 1px rgba(246, 225, 198, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06),
+            0 20px 56px rgba(2, 5, 12, 0.42);
+          --shadow-glow:
+            0 0 0 1px rgba(125, 232, 255, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.04),
+            0 0 34px rgba(125, 232, 255, 0.08),
+            0 18px 44px rgba(3, 6, 14, 0.34);
+          --ease-decor: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
         html {
           scroll-behavior: smooth;
         }
 
         body {
           @apply min-h-screen bg-night-950 font-sans text-cyber-100 antialiased;
+          position: relative;
           background-image:
-            radial-gradient(circle at 12% 18%, rgba(44, 107, 255, 0.22), transparent 22%),
-            radial-gradient(circle at 82% 10%, rgba(103, 232, 249, 0.16), transparent 18%),
-            radial-gradient(circle at 50% 100%, rgba(16, 40, 76, 0.5), transparent 32%),
-            linear-gradient(180deg, #071326 0%, #040816 58%, #02050f 100%);
+            radial-gradient(circle at 12% 16%, rgb(var(--cyber-500) / 0.18), transparent 22%),
+            radial-gradient(circle at 80% 10%, rgb(var(--signal-400) / 0.14), transparent 18%),
+            radial-gradient(circle at 52% 100%, rgb(var(--night-700) / 0.5), transparent 30%),
+            linear-gradient(180deg, rgb(var(--night-900)) 0%, rgb(var(--night-950)) 56%, #02040a 100%);
+        }
+
+        body::before,
+        body::after {
+          content: "";
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        body::before {
+          z-index: -2;
+          background:
+            linear-gradient(126deg, transparent 0, transparent 43%, rgb(var(--cyber-500) / 0.08) 43%, rgb(var(--cyber-500) / 0.08) 45%, transparent 45%, transparent 100%),
+            linear-gradient(rgb(var(--steel-100) / 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(var(--steel-100) / 0.03) 1px, transparent 1px);
+          background-size: auto, 132px 132px, 132px 132px;
+          mask-image: radial-gradient(circle at center, black 58%, transparent 100%);
+          opacity: 0.55;
+        }
+
+        body::after {
+          z-index: -1;
+          background-image:
+            radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+            radial-gradient(circle at 76% 44%, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+          background-size: 18px 18px, 24px 24px;
+          opacity: 0.06;
+          mix-blend-mode: screen;
         }
 
         ::selection {
@@ -77,7 +169,8 @@
 
       @layer utilities {
         .skip-link {
-          @apply absolute left-4 top-[-4rem] z-50 rounded-full border border-cyber-300/30 bg-night-900/95 px-4 py-3 text-sm font-semibold text-white transition-all duration-200;
+          @apply absolute left-4 top-[-4rem] z-50 rounded-full border border-cyber-300/30 bg-night-900/95 px-4 py-3 text-sm font-semibold text-white;
+          transition: top 0.2s ease;
         }
 
         .skip-link:focus {
@@ -85,7 +178,10 @@
         }
 
         .cyber-shell {
-          @apply relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-shell;
+          @apply relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] shadow-shell;
+          background:
+            linear-gradient(155deg, rgba(255, 255, 255, 0.04), transparent 32%),
+            linear-gradient(135deg, rgb(var(--night-900) / 0.96), rgb(var(--night-950) / 0.98));
         }
 
         .cyber-shell::before {
@@ -93,68 +189,94 @@
           position: absolute;
           inset: 0;
           background:
-            linear-gradient(110deg, rgba(255, 255, 255, 0.08), transparent 18%, transparent 72%, rgba(103, 232, 249, 0.08)),
-            radial-gradient(circle at top right, rgba(44, 107, 255, 0.18), transparent 28%);
+            linear-gradient(112deg, rgba(255, 255, 255, 0.08), transparent 16%, transparent 74%, rgb(var(--signal-400) / 0.08)),
+            radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 24%),
+            radial-gradient(circle at 12% 20%, rgb(var(--cyber-500) / 0.1), transparent 28%);
+          pointer-events: none;
+        }
+
+        .cyber-shell::after {
+          content: "";
+          position: absolute;
+          inset: 18% -10% auto 44%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgb(var(--cyber-400) / 0.4), transparent);
+          transform: rotate(-7deg);
           pointer-events: none;
         }
 
         .panel-metal {
-          @apply border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-panel;
+          @apply border border-white/10 backdrop-blur-[22px] shadow-panel;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+            linear-gradient(145deg, rgb(var(--night-900) / 0.88), rgb(var(--night-950) / 0.94));
         }
 
         .panel-glass {
-          @apply border border-cyber-300/15 bg-white/[0.03] backdrop-blur-2xl shadow-glow;
+          @apply border border-signal-400/10 backdrop-blur-[22px] shadow-glow;
+          background:
+            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 56%),
+            rgba(255, 255, 255, 0.03);
         }
 
         .section-title {
-          @apply font-display text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem] lg:text-[2.9rem];
+          @apply font-display text-[2.1rem] font-medium tracking-[-0.05em] text-cyber-100 sm:text-[2.6rem] lg:text-[3.15rem];
+          text-wrap: balance;
         }
 
         .compact-label {
-          @apply text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-cyber-300/90;
+          @apply font-accent text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-cyber-400/90;
         }
 
         .pill {
-          @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-cyber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
+          @apply inline-flex items-center rounded-full border border-white/10 px-4 py-2 font-accent text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
+          background:
+            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 72%),
+            rgba(255, 255, 255, 0.03);
         }
 
         .metal-button {
-          @apply inline-flex items-center justify-center rounded-[18px] px-6 py-3 text-sm font-semibold text-white transition duration-300 ease-out;
-          background-image: linear-gradient(135deg, rgba(93, 162, 255, 0.98), rgba(44, 107, 255, 0.98) 55%, rgba(103, 232, 249, 0.9));
+          @apply inline-flex items-center justify-center rounded-[18px] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-night-950 transition duration-500 ease-out;
+          background-image: linear-gradient(135deg, rgb(var(--cyber-500)), rgb(var(--cyber-400)) 60%, #ffe4c1);
           box-shadow:
-            0 12px 30px rgba(44, 107, 255, 0.28),
-            inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            0 18px 38px rgb(var(--cyber-500) / 0.24),
+            0 0 28px rgb(var(--signal-400) / 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.28);
         }
 
         .metal-button:hover,
         .metal-button:focus-visible {
-          transform: translateY(-2px);
+          transform: translateY(-3px) scale(1.01);
           box-shadow:
-            0 16px 36px rgba(44, 107, 255, 0.34),
-            0 0 24px rgba(103, 232, 249, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.24);
+            0 22px 44px rgb(var(--cyber-500) / 0.3),
+            0 0 30px rgb(var(--signal-400) / 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.34);
         }
 
         .outline-button {
-          @apply inline-flex items-center justify-center rounded-[18px] border border-cyber-300/20 bg-white/[0.02] px-6 py-3 text-sm font-semibold text-cyber-100 transition duration-300 ease-out;
+          @apply inline-flex items-center justify-center rounded-[18px] border border-signal-400/18 bg-white/[0.02] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-cyber-100 transition duration-500 ease-out;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            0 12px 28px rgba(2, 8, 20, 0.28);
+            0 12px 28px rgba(2, 8, 20, 0.3);
         }
 
         .outline-button:hover,
         .outline-button:focus-visible {
-          transform: translateY(-2px);
-          border-color: rgba(103, 232, 249, 0.34);
+          transform: translateY(-3px);
+          border-color: rgb(var(--cyber-400) / 0.42);
           background: rgba(255, 255, 255, 0.05);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.12),
-            0 0 22px rgba(103, 232, 249, 0.12),
-            0 16px 36px rgba(2, 8, 20, 0.32);
+            0 0 22px rgb(var(--signal-400) / 0.12),
+            0 16px 36px rgba(2, 8, 20, 0.34);
         }
 
         .stat-card {
-          @apply relative overflow-hidden border border-white/10 bg-white/[0.05] px-4 py-4 sm:px-5 sm:py-5;
+          @apply relative overflow-hidden border border-white/10 bg-white/[0.04] px-4 py-4 sm:px-5 sm:py-5;
+          transition:
+            transform 0.45s ease,
+            background-color 0.3s ease,
+            border-color 0.3s ease;
         }
 
         .stat-card::before {
@@ -163,13 +285,30 @@
           inset: 0 auto auto 0;
           width: 100%;
           height: 1px;
-          background: linear-gradient(90deg, rgba(103, 232, 249, 0.5), transparent 70%);
+          background: linear-gradient(90deg, rgb(var(--cyber-400) / 0.5), transparent 70%);
           opacity: 0.55;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-4px);
+          border-color: rgb(var(--cyber-400) / 0.2);
+          background: rgb(var(--cyber-500) / 0.05);
         }
 
         .scan-hover {
           position: relative;
           overflow: hidden;
+        }
+
+        .scan-hover::before {
+          content: "";
+          position: absolute;
+          inset: 1px;
+          border-radius: inherit;
+          background: radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 26%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
         }
 
         .scan-hover::after {
@@ -194,24 +333,64 @@
           opacity: 1;
         }
 
+        .scan-hover:hover::before,
+        .scan-hover:focus-within::before {
+          opacity: 1;
+        }
+
         .reveal {
           opacity: 0;
-          transform: translateY(18px);
+          transform: translate3d(0, 24px, 0) scale(0.985);
+          filter: blur(10px);
           transition:
-            opacity 0.7s ease,
-            transform 0.7s ease;
+            opacity 0.8s var(--ease-decor),
+            transform 0.8s var(--ease-decor),
+            filter 0.8s ease;
+          transition-delay: var(--reveal-delay, 0ms);
         }
 
         .reveal.is-visible {
           opacity: 1;
-          transform: translateY(0);
+          transform: translate3d(0, 0, 0) scale(1);
+          filter: blur(0);
+        }
+
+        .stagger-1 {
+          --reveal-delay: 80ms;
+        }
+
+        .stagger-2 {
+          --reveal-delay: 170ms;
+        }
+
+        .stagger-3 {
+          --reveal-delay: 260ms;
+        }
+
+        .stagger-4 {
+          --reveal-delay: 340ms;
+        }
+
+        .ambient-blob {
+          animation: blob-float 18s ease-in-out infinite alternate;
+          will-change: transform;
+        }
+
+        .ambient-blob-b {
+          animation-duration: 22s;
+          animation-delay: -6s;
+        }
+
+        .ambient-blob-c {
+          animation-duration: 20s;
+          animation-delay: -10s;
         }
 
         .grid-overlay {
           background-image:
-            linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-          background-size: 120px 120px;
+            linear-gradient(rgb(var(--steel-100) / 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(var(--steel-100) / 0.05) 1px, transparent 1px);
+          background-size: 132px 132px;
           mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
         }
 
@@ -220,7 +399,50 @@
         }
 
         .focus-ring:focus-visible {
-          @apply ring-2 ring-cyber-400 ring-offset-2 ring-offset-night-950;
+          @apply ring-2 ring-signal-400 ring-offset-2 ring-offset-night-950;
+        }
+
+        @keyframes blob-float {
+          0% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+
+          50% {
+            transform: translate3d(1.2rem, -1rem, 0) scale(1.06);
+          }
+
+          100% {
+            transform: translate3d(-0.8rem, 1.3rem, 0) scale(0.94);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+
+          .reveal,
+          .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+            filter: none;
+          }
+
+          .scan-hover::after {
+            opacity: 0 !important;
+          }
+
+          .ambient-blob {
+            animation: none;
+          }
         }
       }
     </style>
@@ -230,9 +452,9 @@
 
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div class="grid-overlay absolute inset-0 opacity-25"></div>
-      <div class="absolute left-[-12rem] top-16 h-72 w-72 rounded-full bg-cyber-500/20 blur-[120px]"></div>
-      <div class="absolute right-[-10rem] top-24 h-64 w-64 rounded-full bg-cyber-400/12 blur-[110px]"></div>
-      <div class="absolute bottom-[-12rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyber-500/14 blur-[130px]"></div>
+      <div class="ambient-blob absolute left-[-12rem] top-16 h-72 w-72 rounded-full bg-cyber-500/20 blur-[120px]"></div>
+      <div class="ambient-blob ambient-blob-b absolute right-[-10rem] top-24 h-64 w-64 rounded-full bg-signal-400/12 blur-[110px]"></div>
+      <div class="absolute bottom-[-12rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyber-400/14 blur-[130px]"></div>
     </div>
 
     <main id="contenu" class="px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
@@ -260,22 +482,22 @@
               aria-label="Navigation principale"
             >
               <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
-              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Creations</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
               <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
               <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#contact">Contact</a>
             </nav>
 
-            <a class="metal-button focus-ring hidden md:inline-flex" href="#contact">Demarrer</a>
+            <a class="metal-button focus-ring hidden md:inline-flex" href="#contact">D&eacute;marrer</a>
           </header>
 
           <div class="relative z-10 grid gap-5 px-4 py-5 sm:px-6 lg:grid-cols-[1.04fr_minmax(360px,0.96fr)] lg:gap-6 lg:px-7 lg:py-6">
-            <div class="reveal">
+            <div class="reveal stagger-1">
               <p class="compact-label">Studio web pour artisans, restaurants et maisons locales</p>
               <h1 class="mt-3 max-w-[10.4ch] font-display text-[2.8rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5.4rem]">
-                Des vitrines numeriques qui donnent envie d'entrer.
+                Des vitrines num&eacute;riques qui donnent envie d'entrer.
               </h1>
               <p class="mt-5 max-w-2xl text-base leading-8 text-cyber-200/88 sm:text-lg">
-                Je concois des pages sur mesure pour les activites qui se choisissent
+                Je con&ccedil;ois des pages sur mesure pour les activit&eacute;s qui se choisissent
                 autant avec les yeux, l'ambiance et la confiance qu'avec une simple
                 fiche Google. Le fond reste net. La forme laisse une vraie aura.
               </p>
@@ -286,19 +508,19 @@
               </div>
             </div>
 
-            <div class="reveal lg:pt-1">
-              <div class="panel-metal relative isolate overflow-hidden rounded-[32px] border border-cyber-300/15 bg-[linear-gradient(155deg,rgba(19,39,69,0.96),rgba(11,27,51,0.92)_48%,rgba(7,19,38,0.98))] px-4 py-4 shadow-[0_34px_90px_rgba(2,8,24,0.54),0_0_0_1px_rgba(103,232,249,0.12),inset_0_1px_0_rgba(255,255,255,0.08)] sm:px-5">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(103,232,249,0.24),transparent_28%),radial-gradient(circle_at_18%_24%,rgba(44,107,255,0.24),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]"></div>
+            <div class="reveal stagger-2 lg:mt-8">
+              <div class="panel-metal relative isolate overflow-hidden rounded-[32px] border border-cyber-300/15 bg-[linear-gradient(155deg,rgba(25,19,21,0.96),rgba(15,21,33,0.92)_48%,rgba(9,11,18,0.98))] px-4 py-4 shadow-[0_34px_90px_rgba(2,8,24,0.54),0_0_0_1px_rgba(125,232,255,0.08),inset_0_1px_0_rgba(255,255,255,0.08)] sm:px-5">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,232,255,0.22),transparent_28%),radial-gradient(circle_at_18%_24%,rgba(202,126,76,0.2),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]"></div>
                 <div class="absolute inset-[1px] rounded-[31px] border border-white/6" aria-hidden="true"></div>
                 <div class="absolute -left-10 top-20 h-36 w-24 rotate-[18deg] bg-cyber-400/10 blur-[46px]" aria-hidden="true"></div>
-                <div class="absolute -right-6 top-[-2rem] h-40 w-40 rounded-full bg-cyber-400/18 blur-[68px]" aria-hidden="true"></div>
+                <div class="absolute -right-6 top-[-2rem] h-40 w-40 rounded-full bg-signal-400/16 blur-[68px]" aria-hidden="true"></div>
                 <div class="absolute bottom-[-4rem] right-[-1rem] h-52 w-40 rounded-full bg-cyber-500/20 blur-[72px]" aria-hidden="true"></div>
                 <div class="absolute right-5 top-5 h-20 w-20 rounded-full border border-white/10 bg-white/[0.03] blur-[0.2px]" aria-hidden="true"></div>
 
                 <div class="relative z-10">
                   <div class="flex items-center justify-between gap-3">
                     <span class="inline-flex rounded-full border border-cyber-300/20 bg-white/[0.05] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyber-300 shadow-[0_0_24px_rgba(103,232,249,0.08)]">
-                      Atelier numerique
+                      Atelier num&eacute;rique
                     </span>
                     <span class="hidden rounded-full border border-cyber-300/20 bg-cyber-400/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-cyber-100/92 shadow-[0_0_22px_rgba(103,232,249,0.16)] sm:inline-flex">
                       Signal premium
@@ -320,7 +542,11 @@
                     <img
                       class="relative mx-auto w-full max-w-[320px] drop-shadow-[0_26px_54px_rgba(0,0,0,0.42)]"
                       src="assets/hero-illustration.svg"
-                      alt="Illustration d'un bureau creatif avec ordinateur portable, carnet, telephone et elements de design."
+                      width="760"
+                      height="620"
+                      decoding="async"
+                      fetchpriority="high"
+                      alt="Illustration d'un bureau cr&eacute;atif avec ordinateur portable, carnet, t&eacute;l&eacute;phone et &eacute;l&eacute;ments de design."
                     >
                   </div>
 
@@ -329,7 +555,7 @@
                       <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-400 via-cyber-300 to-transparent" aria-hidden="true"></div>
                       <p class="compact-label pl-4">Pour qui</p>
                       <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
-                        Artisans, restaurants, lieux et maisons qui ont du caractere
+                        Artisans, restaurants, lieux et maisons qui ont du caract&egrave;re
                       </p>
                     </article>
 
@@ -357,50 +583,53 @@
           <div class="relative z-10 grid gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">3</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">concepts deja en ligne pour montrer des ambiances reelles</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">concepts d&eacute;j&agrave; en ligne pour montrer des ambiances r&eacute;elles</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">1 cap</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">clarifier, rassurer et rendre le contact evident</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">clarifier, rassurer et rendre le contact &eacute;vident</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">100 %</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">responsive, lisible et pense mobile d'abord</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">responsive, lisible et pens&eacute; mobile d'abord</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">sur mesure</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">pas de theme plaque sur une activite qui merite mieux</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/72">pas de th&egrave;me plaqu&eacute; sur une activit&eacute; qui m&eacute;rite mieux</p>
             </article>
           </div>
         </div>
       </section>
 
       <section class="mx-auto mt-8 max-w-[1320px]" id="creations">
-        <div class="reveal max-w-3xl">
-          <p class="compact-label">Creations</p>
+        <div class="reveal stagger-1 max-w-3xl">
+          <p class="compact-label">Cr&eacute;ations</p>
           <h2 class="section-title mt-3">Trois concepts en ligne dans une lecture plus premium.</h2>
           <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
             Les cartes projet restent immersives, mais elles adoptent maintenant
-            une presentation plus legere, plus technologique et plus coherente avec
-            le reste du systeme visuel.
+            une pr&eacute;sentation plus l&eacute;g&egrave;re, plus technologique et plus coh&eacute;rente avec
+            le reste du syst&egrave;me visuel.
           </p>
         </div>
 
         <div class="mt-4 grid gap-4 lg:grid-cols-3">
-          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+          <article class="reveal stagger-1 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
               href="https://b0uch3r.github.io/quai-ouest/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(44,107,255,0.25),transparent_65%)]"></div>
               <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.2),transparent_26%),linear-gradient(135deg,#10284c,#2c6bff_55%,#9bd7ff)]"></div>
               <img
                 class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                src="assets/projects/quai-ouest-thumbnail.png"
+                src="assets/projects/quai-ouest-thumbnail.webp"
                 alt="Miniature du concept Quai Ouest"
-                loading="lazy"
+                width="1440"
+                height="731"
+                loading="eager"
+                decoding="async"
               >
               <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 01
@@ -412,34 +641,37 @@
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">Quai Ouest</h3>
               </div>
               <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
-                Une vitrine plus immersive, plus atmospherique, qui fait sentir le
-                lieu, la lumiere et le rythme avant le contenu detaille.
+                Une vitrine plus immersive, plus atmosph&eacute;rique, qui fait sentir le
+                lieu, la lumi&egrave;re et le rythme avant le contenu d&eacute;taill&eacute;.
               </p>
               <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
                 <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Immersion visuelle</span>
-                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Ambiance marquee</span>
-                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Lecture detendue</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Ambiance marqu&eacute;e</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Lecture d&eacute;tendue</span>
               </div>
               <div class="mt-auto pt-4">
-                <a class="outline-button focus-ring w-full" href="https://b0uch3r.github.io/quai-ouest/" target="_blank" rel="noreferrer">Voir le projet</a>
+                <a class="outline-button focus-ring w-full" href="https://b0uch3r.github.io/quai-ouest/" target="_blank" rel="noopener noreferrer">Voir le projet <span class="sr-only">Quai Ouest</span></a>
               </div>
             </div>
           </article>
 
-          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+          <article class="reveal stagger-2 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover lg:mt-10">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
               href="https://lapetitfolie.github.io/restaurant/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(103,232,249,0.18),transparent_65%)]"></div>
               <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_22%),linear-gradient(135deg,#1c2d59,#4977ff_58%,#dce8f6)]"></div>
               <img
                 class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                src="assets/projects/la-petite-folie-thumbnail.png"
+                src="assets/projects/la-petite-folie-thumbnail.webp"
                 alt="Miniature du concept La Petite Folie"
-                loading="lazy"
+                width="1440"
+                height="752"
+                loading="eager"
+                decoding="async"
               >
               <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 02
@@ -447,11 +679,11 @@
             </a>
             <div class="flex flex-1 flex-col px-5 py-5">
               <div class="lg:min-h-[88px]">
-                <p class="compact-label">Restaurant / chaleur editoriale</p>
+                <p class="compact-label">Restaurant / chaleur &eacute;ditoriale</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Petite Folie</h3>
               </div>
               <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
-                Une direction plus elegante, plus editoriale, qui combine chaleur,
+                Une direction plus &eacute;l&eacute;gante, plus &eacute;ditoriale, qui combine chaleur,
                 confort et raffinement dans une interface plus douce.
               </p>
               <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
@@ -460,25 +692,28 @@
                 <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Palette expressive</span>
               </div>
               <div class="mt-auto pt-4">
-                <a class="outline-button focus-ring w-full" href="https://lapetitfolie.github.io/restaurant/" target="_blank" rel="noreferrer">Voir le projet</a>
+                <a class="outline-button focus-ring w-full" href="https://lapetitfolie.github.io/restaurant/" target="_blank" rel="noopener noreferrer">Voir le projet <span class="sr-only">La Petite Folie</span></a>
               </div>
             </div>
           </article>
 
-          <article class="reveal panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover">
+          <article class="reveal stagger-3 panel-metal flex h-full flex-col overflow-hidden rounded-[26px] scan-hover lg:mt-4">
             <a
               class="group relative flex min-h-[240px] items-end overflow-hidden px-5 py-4"
               href="https://boulangeriekreisker.github.io/boulangerie/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,22,0.08),rgba(4,8,22,0.85)),linear-gradient(135deg,rgba(44,107,255,0.22),transparent_65%)]"></div>
               <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent),linear-gradient(135deg,#071326,#214089_58%,#67e8f9)]"></div>
               <img
                 class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                src="assets/projects/kreisker-thumbnail.png"
+                src="assets/projects/kreisker-thumbnail.webp"
                 alt="Miniature du concept La Boulangerie du Kreisker"
+                width="1440"
+                height="671"
                 loading="lazy"
+                decoding="async"
               >
               <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 03
@@ -491,15 +726,15 @@
               </div>
               <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
                 Une vitrine plus directe et plus claire, qui met en avant le
-                produit, l'identite locale et l'intention de marque.
+                produit, l'identit&eacute; locale et l'intention de marque.
               </p>
               <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:min-h-[104px] lg:content-start">
                 <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Univers gourmand</span>
                 <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Offre lisible</span>
-                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Identite locale</span>
+                <span class="pill min-h-[44px] justify-self-start px-4 text-xs">Identit&eacute; locale</span>
               </div>
               <div class="mt-auto pt-4">
-                <a class="outline-button focus-ring w-full" href="https://boulangeriekreisker.github.io/boulangerie/" target="_blank" rel="noreferrer">Voir le projet</a>
+                <a class="outline-button focus-ring w-full" href="https://boulangeriekreisker.github.io/boulangerie/" target="_blank" rel="noopener noreferrer">Voir le projet <span class="sr-only">La Boulangerie du Kreisker</span></a>
               </div>
             </div>
           </article>
@@ -507,35 +742,35 @@
       </section>
 
       <section class="mx-auto mt-8 max-w-[1320px]" id="approche">
-        <div class="reveal max-w-3xl">
+        <div class="reveal stagger-1 max-w-3xl">
           <p class="compact-label">Approche</p>
-          <h2 class="section-title mt-3">Un bon site vitrine doit etre net, incarne et desire.</h2>
+          <h2 class="section-title mt-3">Un bon site vitrine doit &ecirc;tre net, incarn&eacute; et d&eacute;sir&eacute;.</h2>
           <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
-            Le redesign part d'une logique simple : plus de clarte, moins de masse
-            visuelle, plus de precision et une vraie signature high-tech. On garde
-            l'effet sur mesure, mais on le traduit avec une matiere visuelle plus
+            Le redesign part d'une logique simple : plus de clart&eacute;, moins de masse
+            visuelle, plus de pr&eacute;cision et une vraie signature high-tech. On garde
+            l'effet sur mesure, mais on le traduit avec une mati&egrave;re visuelle plus
             futuriste et plus premium.
           </p>
         </div>
 
         <div class="mt-4 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-          <article class="reveal panel-metal rounded-[26px] px-5 py-5 sm:px-6 scan-hover">
+          <article class="reveal stagger-2 panel-metal rounded-[26px] px-5 py-5 sm:px-6 scan-hover">
             <p class="compact-label">Cap</p>
             <h3 class="mt-3 max-w-[18ch] font-display text-2xl font-semibold tracking-[-0.05em] text-white sm:text-[2.1rem]">
-              Une interface qui fait ressentir de la maitrise avant meme la premiere lecture.
+              Une interface qui fait ressentir de la ma&icirc;trise avant m&ecirc;me la premi&egrave;re lecture.
             </h3>
             <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
               L'ambiance devient plus cyber-luxury : fond nuit profond, lueurs
-              metalliques, surfaces en verre, accents bleu electrique et details
-              fins. Le tout reste clair, lisible et aere.
+              m&eacute;talliques, surfaces en verre, accents bleu &eacute;lectrique et d&eacute;tails
+              fins. Le tout reste clair, lisible et a&eacute;r&eacute;.
             </p>
           </article>
 
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <article class="reveal panel-glass rounded-[24px] px-5 py-4 scan-hover">
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 lg:pt-10">
+            <article class="reveal stagger-3 panel-glass rounded-[24px] px-5 py-4 scan-hover">
               <p class="compact-label">Lecture</p>
               <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
-                Une hierarchie plus propre
+                Une hi&eacute;rarchie plus propre
               </h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
                 Plus de contraste, plus de blancs, plus d'alignement et moins de
@@ -543,14 +778,14 @@
               </p>
             </article>
 
-            <article class="reveal panel-glass rounded-[24px] px-5 py-4 scan-hover">
+            <article class="reveal stagger-4 panel-glass rounded-[24px] px-5 py-4 scan-hover">
               <p class="compact-label">Texture</p>
               <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
-                Verre, metal, lueur
+                Verre, m&eacute;tal, lueur
               </h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
-                Les cartes deviennent plus fines, avec des bordures metalliques,
-                un glow bleu leger et un fond plus transluscide.
+                Les cartes deviennent plus fines, avec des bordures m&eacute;talliques,
+                un glow bleu l&eacute;ger et un fond plus translucide.
               </p>
             </article>
           </div>
@@ -559,13 +794,13 @@
 
       <section class="mx-auto mt-8 max-w-[1320px]" id="cadre">
         <div class="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-          <div class="reveal panel-metal rounded-[26px] px-5 py-5 sm:px-6">
+          <div class="reveal stagger-1 panel-metal rounded-[26px] px-5 py-5 sm:px-6">
             <p class="compact-label">Cadre</p>
             <h2 class="section-title mt-3 max-w-[12ch]">Un projet court, clair et sans tunnel.</h2>
             <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
-              On part d'une activite reelle, d'une intention commerciale et d'un
+              On part d'une activit&eacute; r&eacute;elle, d'une intention commerciale et d'un
               ton visuel. Ensuite on compose, on affine et on met en ligne une
-              presence deja haut de gamme.
+              pr&eacute;sence d&eacute;j&agrave; haut de gamme.
             </p>
 
             <ul class="mt-5 space-y-3">
@@ -575,7 +810,7 @@
               </li>
               <li class="panel-glass rounded-[20px] px-4 py-3">
                 <p class="compact-label">02</p>
-                <p class="mt-1 text-sm font-semibold text-white">On choisit une voix visuelle : typographie, densite, texture et rythme.</p>
+                <p class="mt-1 text-sm font-semibold text-white">On choisit une voix visuelle : typographie, densit&eacute;, texture et rythme.</p>
               </li>
               <li class="panel-glass rounded-[20px] px-4 py-3">
                 <p class="compact-label">03</p>
@@ -584,8 +819,8 @@
             </ul>
           </div>
 
-          <div class="grid gap-4 sm:grid-cols-2">
-            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+          <div class="grid gap-4 sm:grid-cols-2 lg:pt-8">
+            <article class="reveal stagger-2 panel-glass rounded-[24px] px-5 py-5 scan-hover">
               <p class="compact-label">01</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Cadrer</h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
@@ -594,30 +829,30 @@
               </p>
             </article>
 
-            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+            <article class="reveal stagger-3 panel-glass rounded-[24px] px-5 py-5 scan-hover lg:mt-6">
               <p class="compact-label">02</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Composer</h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
-                Construire une direction plus nette, plus high-tech et plus coherente
+                Construire une direction plus nette, plus high-tech et plus coh&eacute;rente
                 sur chaque bloc.
               </p>
             </article>
 
-            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+            <article class="reveal stagger-3 panel-glass rounded-[24px] px-5 py-5 scan-hover">
               <p class="compact-label">03</p>
-              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Developper</h3>
+              <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">D&eacute;velopper</h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
-                Integrer proprement, garantir la lisibilite et garder un rendu
+                Int&eacute;grer proprement, garantir la lisibilit&eacute; et garder un rendu
                 solide en desktop comme en mobile.
               </p>
             </article>
 
-            <article class="reveal panel-glass rounded-[24px] px-5 py-5 scan-hover">
+            <article class="reveal stagger-4 panel-glass rounded-[24px] px-5 py-5 scan-hover lg:mt-6">
               <p class="compact-label">04</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Lancer</h3>
               <p class="mt-2 text-sm leading-7 text-cyber-200/72">
-                Ajuster les derniers details et publier une vitrine deja premium,
-                claire et memorable.
+                Ajuster les derniers d&eacute;tails et publier une vitrine d&eacute;j&agrave; premium,
+                claire et m&eacute;morable.
               </p>
             </article>
           </div>
@@ -625,8 +860,8 @@
       </section>
 
       <section class="mx-auto mt-8 max-w-[1320px] pb-6" id="contact">
-        <div class="reveal relative overflow-hidden rounded-[28px] border border-cyber-300/15 bg-[linear-gradient(135deg,rgba(4,8,22,0.94),rgba(16,40,76,0.92))] px-5 py-6 shadow-shell sm:px-6">
-          <div class="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top_right,rgba(103,232,249,0.2),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(44,107,255,0.26),transparent_36%)]"></div>
+        <div class="reveal stagger-1 relative overflow-hidden rounded-[28px] border border-cyber-300/15 bg-[linear-gradient(135deg,rgba(12,15,24,0.96),rgba(18,24,36,0.92))] px-5 py-6 shadow-shell sm:px-6">
+          <div class="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top_right,rgba(125,232,255,0.16),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(202,126,76,0.24),transparent_36%)]"></div>
           <div class="relative z-10 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p class="compact-label">Contact</p>
@@ -635,22 +870,17 @@
               </h2>
               <p class="mt-3 max-w-3xl text-base leading-8 text-cyber-200/76 sm:text-lg">
                 Le redesign garde le fond artisanal, mais il l'exprime dans une
-                matiere plus premium, plus lumineuse et plus contemporaine. Si une
-                activite a du caractere, elle peut aussi avoir une presence digitale
-                qui respire la maitrise.
+                mati&egrave;re plus premium, plus lumineuse et plus contemporaine. Si une
+                activit&eacute; a du caract&egrave;re, elle peut aussi avoir une pr&eacute;sence digitale
+                qui respire la ma&icirc;trise.
               </p>
             </div>
 
             <div class="grid gap-3">
-              <a
-                class="metal-button focus-ring min-w-[240px] justify-center"
-                href="mailto:bonjour@votrestudio.fr?subject=Parlons%20de%20mon%20site%20cyber"
-              >
-                Parler du projet
-              </a>
-              <p class="max-w-[260px] text-sm leading-6 text-cyber-200/66">
-                Adresse a personnaliser avant mise en ligne :
-                <strong class="font-semibold text-white">bonjour@votrestudio.fr</strong>
+              <a class="metal-button focus-ring min-w-[240px] justify-center" href="./contact.html">Ouvrir la page contact</a>
+              <p class="max-w-[280px] text-sm leading-6 text-cyber-200/66" id="contact-email-note">
+                Les coordonn&eacute;es directes sont en cours de configuration. La page
+                contact est d&eacute;j&agrave; en place pour compl&eacute;ter ce point avant mise en ligne.
               </p>
             </div>
           </div>
@@ -658,15 +888,38 @@
       </section>
     </main>
 
+    <footer class="mx-auto max-w-[1320px] px-4 pb-6 pt-2 sm:px-6 lg:px-8" role="contentinfo">
+      <div class="panel-glass flex flex-col gap-4 rounded-[24px] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-display text-lg font-semibold tracking-[-0.05em] text-white">Studio B0ucher</p>
+          <p class="mt-1 max-w-xl text-sm leading-6 text-cyber-200/68">
+            Sites vitrines sur mesure pour lieux, maisons et activit&eacute;s locales avec une direction claire, premium et contemporaine.
+          </p>
+        </div>
+        <nav class="flex flex-wrap gap-2" aria-label="Liens de pied de page">
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./a-propos.html">&Agrave; propos</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./contact.html">Contact</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./politique-confidentialite.html">Confidentialit&eacute;</a>
+        </nav>
+      </div>
+    </footer>
+
     <script>
       const navToggle = document.querySelector("[data-nav-toggle]");
       const siteNav = document.querySelector("#site-nav");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (navToggle && siteNav) {
-        const syncNavState = (isOpen) => {
-          navToggle.setAttribute("aria-expanded", String(isOpen));
-          navToggle.textContent = isOpen ? "Fermer" : "Menu";
-          siteNav.classList.toggle("hidden", !isOpen && window.innerWidth < 768);
+        const syncNavState = (isOpen = false) => {
+          const isDesktop = window.innerWidth >= 768;
+          const expanded = !isDesktop && isOpen;
+
+          navToggle.setAttribute("aria-expanded", String(expanded));
+          navToggle.textContent = expanded ? "Fermer" : "Menu";
+          siteNav.classList.toggle("hidden", !isDesktop && !expanded);
         };
 
         navToggle.addEventListener("click", () => {
@@ -678,20 +931,20 @@
           link.addEventListener("click", () => syncNavState(false));
         });
 
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 768) {
-            siteNav.classList.remove("hidden");
-            navToggle.setAttribute("aria-expanded", "false");
-            navToggle.textContent = "Menu";
-          } else if (navToggle.getAttribute("aria-expanded") !== "true") {
-            siteNav.classList.add("hidden");
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+            syncNavState(false);
+            navToggle.focus();
           }
         });
+
+        window.addEventListener("resize", () => syncNavState(false));
+        syncNavState(false);
       }
 
       const revealElements = document.querySelectorAll(".reveal");
 
-      if ("IntersectionObserver" in window && revealElements.length > 0) {
+      if (!reduceMotion && "IntersectionObserver" in window && revealElements.length > 0) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
