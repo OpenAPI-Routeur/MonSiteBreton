@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+      @layer base {
+        :root {
+          --night-950: 6 8 13;
+          --night-900: 11 16 27;
+          --night-800: 18 27 43;
+          --night-700: 29 42 65;
+          --cyber-500: 202 126 76;
+          --cyber-400: 244 195 137;
+          --cyber-300: 246 225 198;
+          --cyber-200: 223 208 187;
+          --cyber-100: 248 239 229;
+          --signal-500: 67 114 255;
+          --signal-400: 125 232 255;
+          --signal-300: 188 243 255;
+          --steel-300: 199 206 218;
+          --steel-200: 222 227 235;
+          --steel-100: 247 243 237;
+          --shadow-shell:
+            0 0 0 1px rgba(246, 225, 198, 0.08),
+            0 36px 120px rgba(2, 4, 10, 0.66),
+            0 0 80px rgba(202, 126, 76, 0.08);
+          --shadow-panel:
+            0 0 0 1px rgba(246, 225, 198, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06),
+            0 20px 56px rgba(2, 5, 12, 0.42);
+          --shadow-glow:
+            0 0 0 1px rgba(125, 232, 255, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.04),
+            0 0 34px rgba(125, 232, 255, 0.08),
+            0 18px 44px rgba(3, 6, 14, 0.34);
+          --ease-decor: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          @apply min-h-screen bg-night-950 font-sans text-cyber-100 antialiased;
+          position: relative;
+          background-image:
+            radial-gradient(circle at 12% 16%, rgb(var(--cyber-500) / 0.18), transparent 22%),
+            radial-gradient(circle at 80% 10%, rgb(var(--signal-400) / 0.14), transparent 18%),
+            radial-gradient(circle at 52% 100%, rgb(var(--night-700) / 0.5), transparent 30%),
+            linear-gradient(180deg, rgb(var(--night-900)) 0%, rgb(var(--night-950)) 56%, #02040a 100%);
+        }
+
+        body::before,
+        body::after {
+          content: "";
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        body::before {
+          z-index: -2;
+          background:
+            linear-gradient(126deg, transparent 0, transparent 43%, rgb(var(--cyber-500) / 0.08) 43%, rgb(var(--cyber-500) / 0.08) 45%, transparent 45%, transparent 100%),
+            linear-gradient(rgb(var(--steel-100) / 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(var(--steel-100) / 0.03) 1px, transparent 1px);
+          background-size: auto, 132px 132px, 132px 132px;
+          mask-image: radial-gradient(circle at center, black 58%, transparent 100%);
+          opacity: 0.55;
+        }
+
+        body::after {
+          z-index: -1;
+          background-image:
+            radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+            radial-gradient(circle at 76% 44%, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+          background-size: 18px 18px, 24px 24px;
+          opacity: 0.06;
+          mix-blend-mode: screen;
+        }
+
+        ::selection {
+          @apply bg-cyber-500/[0.30] text-white;
+        }
+      }
+
+      @layer utilities {
+        .skip-link {
+          @apply absolute left-4 top-[-4rem] z-50 rounded-full border border-cyber-300/[0.30] bg-night-900/[0.95] px-4 py-3 text-sm font-semibold text-white;
+          transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+          @apply top-4;
+        }
+
+        .cyber-shell {
+          @apply relative overflow-hidden rounded-[34px] border border-white/[0.10] bg-white/[0.03] shadow-shell;
+          background:
+            linear-gradient(155deg, rgba(255, 255, 255, 0.04), transparent 32%),
+            linear-gradient(135deg, rgb(var(--night-900) / 0.96), rgb(var(--night-950) / 0.98));
+        }
+
+        .cyber-shell::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(112deg, rgba(255, 255, 255, 0.08), transparent 16%, transparent 74%, rgb(var(--signal-400) / 0.08)),
+            radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 24%),
+            radial-gradient(circle at 12% 20%, rgb(var(--cyber-500) / 0.1), transparent 28%);
+          pointer-events: none;
+        }
+
+        .cyber-shell::after {
+          content: "";
+          position: absolute;
+          inset: 18% -10% auto 44%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgb(var(--cyber-400) / 0.4), transparent);
+          transform: rotate(-7deg);
+          pointer-events: none;
+        }
+
+        .panel-metal {
+          @apply border border-white/[0.10] backdrop-blur-[22px] shadow-panel;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+            linear-gradient(145deg, rgb(var(--night-900) / 0.88), rgb(var(--night-950) / 0.94));
+        }
+
+        .panel-glass {
+          @apply border border-signal-400/[0.10] backdrop-blur-[22px] shadow-glow;
+          background:
+            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 56%),
+            rgba(255, 255, 255, 0.03);
+        }
+
+        .section-title {
+          @apply font-display text-[2.1rem] font-medium tracking-[-0.05em] text-cyber-100 sm:text-[2.6rem] lg:text-[3.15rem];
+          text-wrap: balance;
+        }
+
+        .compact-label {
+          @apply font-accent text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-cyber-400/[0.90];
+        }
+
+        .pill {
+          @apply inline-flex items-center rounded-full border border-white/[0.10] px-4 py-2 font-accent text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
+          background:
+            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 72%),
+            rgba(255, 255, 255, 0.03);
+        }
+
+        .metal-button {
+          @apply inline-flex items-center justify-center rounded-[18px] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-night-950 transition duration-500 ease-out;
+          background-image: linear-gradient(135deg, rgb(var(--cyber-500)), rgb(var(--cyber-400)) 60%, #ffe4c1);
+          box-shadow:
+            0 18px 38px rgb(var(--cyber-500) / 0.24),
+            0 0 28px rgb(var(--signal-400) / 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.28);
+        }
+
+        .metal-button:hover,
+        .metal-button:focus-visible {
+          transform: translateY(-3px) scale(1.01);
+          box-shadow:
+            0 22px 44px rgb(var(--cyber-500) / 0.3),
+            0 0 30px rgb(var(--signal-400) / 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.34);
+        }
+
+        .outline-button {
+          @apply inline-flex items-center justify-center rounded-[18px] border border-signal-400/[0.18] bg-white/[0.02] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-cyber-100 transition duration-500 ease-out;
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.08),
+            0 12px 28px rgba(2, 8, 20, 0.3);
+        }
+
+        .outline-button:hover,
+        .outline-button:focus-visible {
+          transform: translateY(-3px);
+          border-color: rgb(var(--cyber-400) / 0.42);
+          background: rgba(255, 255, 255, 0.05);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            0 0 22px rgb(var(--signal-400) / 0.12),
+            0 16px 36px rgba(2, 8, 20, 0.34);
+        }
+
+        .stat-card {
+          @apply relative overflow-hidden border border-white/[0.10] bg-white/[0.04] px-4 py-4 sm:px-5 sm:py-5;
+          transition:
+            transform 0.45s ease,
+            background-color 0.3s ease,
+            border-color 0.3s ease;
+        }
+
+        .stat-card::before {
+          content: "";
+          position: absolute;
+          inset: 0 auto auto 0;
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(90deg, rgb(var(--cyber-400) / 0.5), transparent 70%);
+          opacity: 0.55;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-4px);
+          border-color: rgb(var(--cyber-400) / 0.2);
+          background: rgb(var(--cyber-500) / 0.05);
+        }
+
+        .scan-hover {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .scan-hover::before {
+          content: "";
+          position: absolute;
+          inset: 1px;
+          border-radius: inherit;
+          background: radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 26%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+        }
+
+        .scan-hover::after {
+          content: "";
+          position: absolute;
+          top: -15%;
+          left: -36%;
+          width: 24%;
+          height: 130%;
+          opacity: 0;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+          transform: skewX(-22deg);
+          transition:
+            left 0.55s ease,
+            opacity 0.55s ease;
+          pointer-events: none;
+        }
+
+        .scan-hover:hover::after,
+        .scan-hover:focus-within::after {
+          left: 118%;
+          opacity: 1;
+        }
+
+        .scan-hover:hover::before,
+        .scan-hover:focus-within::before {
+          opacity: 1;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          transition:
+            opacity 0.8s var(--ease-decor),
+            transform 0.8s var(--ease-decor),
+            filter 0.8s ease;
+          transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        .motion-ready .reveal {
+          opacity: 0;
+          transform: translate3d(0, 24px, 0) scale(0.985);
+          filter: blur(10px);
+        }
+
+        .motion-ready .reveal.is-visible {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+          filter: blur(0);
+        }
+
+        .stagger-1 {
+          --reveal-delay: 80ms;
+        }
+
+        .stagger-2 {
+          --reveal-delay: 170ms;
+        }
+
+        .stagger-3 {
+          --reveal-delay: 260ms;
+        }
+
+        .stagger-4 {
+          --reveal-delay: 340ms;
+        }
+
+        .ambient-blob {
+          animation: blob-float 18s ease-in-out infinite alternate;
+          will-change: transform;
+        }
+
+        .ambient-blob-b {
+          animation-duration: 22s;
+          animation-delay: -6s;
+        }
+
+        .ambient-blob-c {
+          animation-duration: 20s;
+          animation-delay: -10s;
+        }
+
+        .grid-overlay {
+          background-image:
+            linear-gradient(rgb(var(--steel-100) / 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(var(--steel-100) / 0.05) 1px, transparent 1px);
+          background-size: 132px 132px;
+          mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+        }
+
+        .focus-ring {
+          @apply outline-none ring-0;
+        }
+
+        .focus-ring:focus-visible {
+          @apply ring-2 ring-signal-400 ring-offset-2 ring-offset-night-950;
+        }
+
+        @keyframes blob-float {
+          0% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+
+          50% {
+            transform: translate3d(1.2rem, -1rem, 0) scale(1.06);
+          }
+
+          100% {
+            transform: translate3d(-0.8rem, 1.3rem, 0) scale(0.94);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+
+          .motion-ready .reveal,
+          .motion-ready .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+            filter: none;
+          }
+
+          .scan-hover::after {
+            opacity: 0 !important;
+          }
+
+          .ambient-blob {
+            animation: none;
+          }
+        }
+      }
+

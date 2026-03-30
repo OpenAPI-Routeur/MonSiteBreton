@@ -34,440 +34,34 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link
       href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
     <link rel="preload" as="image" href="assets/hero-illustration.svg" type="image/svg+xml">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              night: {
-                950: "rgb(var(--night-950) / <alpha-value>)",
-                900: "rgb(var(--night-900) / <alpha-value>)",
-                800: "rgb(var(--night-800) / <alpha-value>)",
-                700: "rgb(var(--night-700) / <alpha-value>)",
-              },
-              cyber: {
-                500: "rgb(var(--cyber-500) / <alpha-value>)",
-                400: "rgb(var(--cyber-400) / <alpha-value>)",
-                300: "rgb(var(--cyber-300) / <alpha-value>)",
-                200: "rgb(var(--cyber-200) / <alpha-value>)",
-                100: "rgb(var(--cyber-100) / <alpha-value>)",
-              },
-              signal: {
-                500: "rgb(var(--signal-500) / <alpha-value>)",
-                400: "rgb(var(--signal-400) / <alpha-value>)",
-                300: "rgb(var(--signal-300) / <alpha-value>)",
-              },
-              steel: {
-                300: "rgb(var(--steel-300) / <alpha-value>)",
-                200: "rgb(var(--steel-200) / <alpha-value>)",
-                100: "rgb(var(--steel-100) / <alpha-value>)",
-              },
-            },
-            fontFamily: {
-              display: ["Gloock", "Times New Roman", "serif"],
-              sans: ["IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"],
-              accent: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
-            },
-            boxShadow: {
-              shell: "var(--shadow-shell)",
-              panel: "var(--shadow-panel)",
-              glow: "var(--shadow-glow)",
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer base {
-        :root {
-          --night-950: 6 8 13;
-          --night-900: 11 16 27;
-          --night-800: 18 27 43;
-          --night-700: 29 42 65;
-          --cyber-500: 202 126 76;
-          --cyber-400: 244 195 137;
-          --cyber-300: 246 225 198;
-          --cyber-200: 223 208 187;
-          --cyber-100: 248 239 229;
-          --signal-500: 67 114 255;
-          --signal-400: 125 232 255;
-          --signal-300: 188 243 255;
-          --steel-300: 199 206 218;
-          --steel-200: 222 227 235;
-          --steel-100: 247 243 237;
-          --shadow-shell:
-            0 0 0 1px rgba(246, 225, 198, 0.08),
-            0 36px 120px rgba(2, 4, 10, 0.66),
-            0 0 80px rgba(202, 126, 76, 0.08);
-          --shadow-panel:
-            0 0 0 1px rgba(246, 225, 198, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.06),
-            0 20px 56px rgba(2, 5, 12, 0.42);
-          --shadow-glow:
-            0 0 0 1px rgba(125, 232, 255, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.04),
-            0 0 34px rgba(125, 232, 255, 0.08),
-            0 18px 44px rgba(3, 6, 14, 0.34);
-          --ease-decor: cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        html {
-          scroll-behavior: smooth;
-        }
-
-        body {
-          @apply min-h-screen bg-night-950 font-sans text-cyber-100 antialiased;
-          position: relative;
-          background-image:
-            radial-gradient(circle at 12% 16%, rgb(var(--cyber-500) / 0.18), transparent 22%),
-            radial-gradient(circle at 80% 10%, rgb(var(--signal-400) / 0.14), transparent 18%),
-            radial-gradient(circle at 52% 100%, rgb(var(--night-700) / 0.5), transparent 30%),
-            linear-gradient(180deg, rgb(var(--night-900)) 0%, rgb(var(--night-950)) 56%, #02040a 100%);
-        }
-
-        body::before,
-        body::after {
-          content: "";
-          position: fixed;
-          inset: 0;
-          pointer-events: none;
-        }
-
-        body::before {
-          z-index: -2;
-          background:
-            linear-gradient(126deg, transparent 0, transparent 43%, rgb(var(--cyber-500) / 0.08) 43%, rgb(var(--cyber-500) / 0.08) 45%, transparent 45%, transparent 100%),
-            linear-gradient(rgb(var(--steel-100) / 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgb(var(--steel-100) / 0.03) 1px, transparent 1px);
-          background-size: auto, 132px 132px, 132px 132px;
-          mask-image: radial-gradient(circle at center, black 58%, transparent 100%);
-          opacity: 0.55;
-        }
-
-        body::after {
-          z-index: -1;
-          background-image:
-            radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-            radial-gradient(circle at 76% 44%, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-          background-size: 18px 18px, 24px 24px;
-          opacity: 0.06;
-          mix-blend-mode: screen;
-        }
-
-        ::selection {
-          @apply bg-cyber-500/30 text-white;
-        }
-      }
-
-      @layer utilities {
-        .skip-link {
-          @apply absolute left-4 top-[-4rem] z-50 rounded-full border border-cyber-300/30 bg-night-900/95 px-4 py-3 text-sm font-semibold text-white;
-          transition: top 0.2s ease;
-        }
-
-        .skip-link:focus {
-          @apply top-4;
-        }
-
-        .cyber-shell {
-          @apply relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] shadow-shell;
-          background:
-            linear-gradient(155deg, rgba(255, 255, 255, 0.04), transparent 32%),
-            linear-gradient(135deg, rgb(var(--night-900) / 0.96), rgb(var(--night-950) / 0.98));
-        }
-
-        .cyber-shell::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background:
-            linear-gradient(112deg, rgba(255, 255, 255, 0.08), transparent 16%, transparent 74%, rgb(var(--signal-400) / 0.08)),
-            radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 24%),
-            radial-gradient(circle at 12% 20%, rgb(var(--cyber-500) / 0.1), transparent 28%);
-          pointer-events: none;
-        }
-
-        .cyber-shell::after {
-          content: "";
-          position: absolute;
-          inset: 18% -10% auto 44%;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgb(var(--cyber-400) / 0.4), transparent);
-          transform: rotate(-7deg);
-          pointer-events: none;
-        }
-
-        .panel-metal {
-          @apply border border-white/10 backdrop-blur-[22px] shadow-panel;
-          background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
-            linear-gradient(145deg, rgb(var(--night-900) / 0.88), rgb(var(--night-950) / 0.94));
-        }
-
-        .panel-glass {
-          @apply border border-signal-400/10 backdrop-blur-[22px] shadow-glow;
-          background:
-            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 56%),
-            rgba(255, 255, 255, 0.03);
-        }
-
-        .section-title {
-          @apply font-display text-[2.1rem] font-medium tracking-[-0.05em] text-cyber-100 sm:text-[2.6rem] lg:text-[3.15rem];
-          text-wrap: balance;
-        }
-
-        .compact-label {
-          @apply font-accent text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-cyber-400/90;
-        }
-
-        .pill {
-          @apply inline-flex items-center rounded-full border border-white/10 px-4 py-2 font-accent text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
-          background:
-            linear-gradient(135deg, rgb(var(--cyber-500) / 0.08), transparent 72%),
-            rgba(255, 255, 255, 0.03);
-        }
-
-        .metal-button {
-          @apply inline-flex items-center justify-center rounded-[18px] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-night-950 transition duration-500 ease-out;
-          background-image: linear-gradient(135deg, rgb(var(--cyber-500)), rgb(var(--cyber-400)) 60%, #ffe4c1);
-          box-shadow:
-            0 18px 38px rgb(var(--cyber-500) / 0.24),
-            0 0 28px rgb(var(--signal-400) / 0.12),
-            inset 0 1px 0 rgba(255, 255, 255, 0.28);
-        }
-
-        .metal-button:hover,
-        .metal-button:focus-visible {
-          transform: translateY(-3px) scale(1.01);
-          box-shadow:
-            0 22px 44px rgb(var(--cyber-500) / 0.3),
-            0 0 30px rgb(var(--signal-400) / 0.18),
-            inset 0 1px 0 rgba(255, 255, 255, 0.34);
-        }
-
-        .outline-button {
-          @apply inline-flex items-center justify-center rounded-[18px] border border-signal-400/18 bg-white/[0.02] px-6 py-3 font-accent text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-cyber-100 transition duration-500 ease-out;
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            0 12px 28px rgba(2, 8, 20, 0.3);
-        }
-
-        .outline-button:hover,
-        .outline-button:focus-visible {
-          transform: translateY(-3px);
-          border-color: rgb(var(--cyber-400) / 0.42);
-          background: rgba(255, 255, 255, 0.05);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.12),
-            0 0 22px rgb(var(--signal-400) / 0.12),
-            0 16px 36px rgba(2, 8, 20, 0.34);
-        }
-
-        .stat-card {
-          @apply relative overflow-hidden border border-white/10 bg-white/[0.04] px-4 py-4 sm:px-5 sm:py-5;
-          transition:
-            transform 0.45s ease,
-            background-color 0.3s ease,
-            border-color 0.3s ease;
-        }
-
-        .stat-card::before {
-          content: "";
-          position: absolute;
-          inset: 0 auto auto 0;
-          width: 100%;
-          height: 1px;
-          background: linear-gradient(90deg, rgb(var(--cyber-400) / 0.5), transparent 70%);
-          opacity: 0.55;
-        }
-
-        .stat-card:hover {
-          transform: translateY(-4px);
-          border-color: rgb(var(--cyber-400) / 0.2);
-          background: rgb(var(--cyber-500) / 0.05);
-        }
-
-        .scan-hover {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .scan-hover::before {
-          content: "";
-          position: absolute;
-          inset: 1px;
-          border-radius: inherit;
-          background: radial-gradient(circle at top right, rgb(var(--signal-400) / 0.12), transparent 26%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
-        }
-
-        .scan-hover::after {
-          content: "";
-          position: absolute;
-          top: -15%;
-          left: -36%;
-          width: 24%;
-          height: 130%;
-          opacity: 0;
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
-          transform: skewX(-22deg);
-          transition:
-            left 0.55s ease,
-            opacity 0.55s ease;
-          pointer-events: none;
-        }
-
-        .scan-hover:hover::after,
-        .scan-hover:focus-within::after {
-          left: 118%;
-          opacity: 1;
-        }
-
-        .scan-hover:hover::before,
-        .scan-hover:focus-within::before {
-          opacity: 1;
-        }
-
-        .reveal {
-          opacity: 0;
-          transform: translate3d(0, 24px, 0) scale(0.985);
-          filter: blur(10px);
-          transition:
-            opacity 0.8s var(--ease-decor),
-            transform 0.8s var(--ease-decor),
-            filter 0.8s ease;
-          transition-delay: var(--reveal-delay, 0ms);
-        }
-
-        .reveal.is-visible {
-          opacity: 1;
-          transform: translate3d(0, 0, 0) scale(1);
-          filter: blur(0);
-        }
-
-        .stagger-1 {
-          --reveal-delay: 80ms;
-        }
-
-        .stagger-2 {
-          --reveal-delay: 170ms;
-        }
-
-        .stagger-3 {
-          --reveal-delay: 260ms;
-        }
-
-        .stagger-4 {
-          --reveal-delay: 340ms;
-        }
-
-        .ambient-blob {
-          animation: blob-float 18s ease-in-out infinite alternate;
-          will-change: transform;
-        }
-
-        .ambient-blob-b {
-          animation-duration: 22s;
-          animation-delay: -6s;
-        }
-
-        .ambient-blob-c {
-          animation-duration: 20s;
-          animation-delay: -10s;
-        }
-
-        .grid-overlay {
-          background-image:
-            linear-gradient(rgb(var(--steel-100) / 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgb(var(--steel-100) / 0.05) 1px, transparent 1px);
-          background-size: 132px 132px;
-          mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
-        }
-
-        .focus-ring {
-          @apply outline-none ring-0;
-        }
-
-        .focus-ring:focus-visible {
-          @apply ring-2 ring-signal-400 ring-offset-2 ring-offset-night-950;
-        }
-
-        @keyframes blob-float {
-          0% {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-
-          50% {
-            transform: translate3d(1.2rem, -1rem, 0) scale(1.06);
-          }
-
-          100% {
-            transform: translate3d(-0.8rem, 1.3rem, 0) scale(0.94);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          html {
-            scroll-behavior: auto;
-          }
-
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-
-          .reveal,
-          .reveal.is-visible {
-            opacity: 1;
-            transform: none;
-            filter: none;
-          }
-
-          .scan-hover::after {
-            opacity: 0 !important;
-          }
-
-          .ambient-blob {
-            animation: none;
-          }
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/index.css">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <div class="grid-overlay absolute inset-0 opacity-25"></div>
-      <div class="ambient-blob absolute left-[-12rem] top-16 h-72 w-72 rounded-full bg-cyber-500/20 blur-[120px]"></div>
-      <div class="ambient-blob ambient-blob-b absolute right-[-10rem] top-24 h-64 w-64 rounded-full bg-signal-400/12 blur-[110px]"></div>
-      <div class="absolute bottom-[-12rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyber-400/14 blur-[130px]"></div>
+      <div class="ambient-blob absolute left-[-12rem] top-16 h-72 w-72 rounded-full bg-cyber-500/[0.20] blur-[120px]"></div>
+      <div class="ambient-blob ambient-blob-b absolute right-[-10rem] top-24 h-64 w-64 rounded-full bg-signal-400/[0.12] blur-[110px]"></div>
+      <div class="absolute bottom-[-12rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyber-400/[0.14] blur-[130px]"></div>
     </div>
 
     <main id="contenu" class="px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
       <section class="mx-auto max-w-[1320px]">
         <div class="cyber-shell">
-          <header class="relative z-10 flex flex-wrap items-center gap-3 border-b border-white/10 px-4 py-3 sm:px-6">
+          <header class="relative z-10 flex flex-wrap items-center gap-3 border-b border-white/[0.10] px-4 py-3 sm:px-6">
             <a class="group inline-flex items-center gap-2 rounded-full focus-ring" href="#contenu" aria-label="Accueil Studio B0ucher">
-              <span class="rounded-full border border-cyber-300/20 bg-cyber-500/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-cyber-300">Studio</span>
+              <span class="rounded-full border border-cyber-300/[0.20] bg-cyber-500/[0.10] px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-cyber-300">Studio</span>
               <span class="font-display text-base font-semibold uppercase tracking-[0.2em] text-white sm:text-lg">B0ucher</span>
             </a>
 
             <button
-              class="ml-auto inline-flex items-center rounded-full border border-cyber-300/20 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-cyber-100 focus-ring md:hidden"
+              class="ml-auto inline-flex items-center rounded-full border border-cyber-300/[0.20] bg-white/[0.04] px-4 py-2 text-sm font-semibold text-cyber-100 focus-ring md:hidden"
               type="button"
               aria-expanded="false"
               aria-controls="site-nav"
@@ -481,10 +75,10 @@
               id="site-nav"
               aria-label="Navigation principale"
             >
-              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
-              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
-              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
-              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#contact">Contact</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
+              <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#contact">Contact</a>
             </nav>
 
             <a class="metal-button focus-ring hidden md:inline-flex" href="#contact">D&eacute;marrer</a>
@@ -496,7 +90,7 @@
               <h1 class="mt-3 max-w-[10.4ch] font-display text-[2.8rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5.4rem]">
                 Des vitrines num&eacute;riques qui donnent envie d'entrer.
               </h1>
-              <p class="mt-5 max-w-2xl text-base leading-8 text-cyber-200/88 sm:text-lg">
+              <p class="mt-5 max-w-2xl text-base leading-8 text-cyber-200/[0.88] sm:text-lg">
                 Je con&ccedil;ois des pages sur mesure pour les activit&eacute;s qui se choisissent
                 autant avec les yeux, l'ambiance et la confiance qu'avec une simple
                 fiche Google. Le fond reste net. La forme laisse une vraie aura.
@@ -509,32 +103,32 @@
             </div>
 
             <div class="reveal stagger-2 lg:mt-8">
-              <div class="panel-metal relative isolate overflow-hidden rounded-[32px] border border-cyber-300/15 bg-[linear-gradient(155deg,rgba(25,19,21,0.96),rgba(15,21,33,0.92)_48%,rgba(9,11,18,0.98))] px-4 py-4 shadow-[0_34px_90px_rgba(2,8,24,0.54),0_0_0_1px_rgba(125,232,255,0.08),inset_0_1px_0_rgba(255,255,255,0.08)] sm:px-5">
+              <div class="panel-metal relative isolate overflow-hidden rounded-[32px] border border-cyber-300/[0.15] bg-[linear-gradient(155deg,rgba(25,19,21,0.96),rgba(15,21,33,0.92)_48%,rgba(9,11,18,0.98))] px-4 py-4 shadow-[0_34px_90px_rgba(2,8,24,0.54),0_0_0_1px_rgba(125,232,255,0.08),inset_0_1px_0_rgba(255,255,255,0.08)] sm:px-5">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,232,255,0.22),transparent_28%),radial-gradient(circle_at_18%_24%,rgba(202,126,76,0.2),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]"></div>
-                <div class="absolute inset-[1px] rounded-[31px] border border-white/6" aria-hidden="true"></div>
-                <div class="absolute -left-10 top-20 h-36 w-24 rotate-[18deg] bg-cyber-400/10 blur-[46px]" aria-hidden="true"></div>
-                <div class="absolute -right-6 top-[-2rem] h-40 w-40 rounded-full bg-signal-400/16 blur-[68px]" aria-hidden="true"></div>
-                <div class="absolute bottom-[-4rem] right-[-1rem] h-52 w-40 rounded-full bg-cyber-500/20 blur-[72px]" aria-hidden="true"></div>
-                <div class="absolute right-5 top-5 h-20 w-20 rounded-full border border-white/10 bg-white/[0.03] blur-[0.2px]" aria-hidden="true"></div>
+                <div class="absolute inset-[1px] rounded-[31px] border border-white/[0.06]" aria-hidden="true"></div>
+                <div class="absolute -left-10 top-20 h-36 w-24 rotate-[18deg] bg-cyber-400/[0.10] blur-[46px]" aria-hidden="true"></div>
+                <div class="absolute -right-6 top-[-2rem] h-40 w-40 rounded-full bg-signal-400/[0.16] blur-[68px]" aria-hidden="true"></div>
+                <div class="absolute bottom-[-4rem] right-[-1rem] h-52 w-40 rounded-full bg-cyber-500/[0.20] blur-[72px]" aria-hidden="true"></div>
+                <div class="absolute right-5 top-5 h-20 w-20 rounded-full border border-white/[0.10] bg-white/[0.03] blur-[0.2px]" aria-hidden="true"></div>
 
                 <div class="relative z-10">
                   <div class="flex items-center justify-between gap-3">
-                    <span class="inline-flex rounded-full border border-cyber-300/20 bg-white/[0.05] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyber-300 shadow-[0_0_24px_rgba(103,232,249,0.08)]">
+                    <span class="inline-flex rounded-full border border-cyber-300/[0.20] bg-white/[0.05] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyber-300 shadow-[0_0_24px_rgba(103,232,249,0.08)]">
                       Atelier num&eacute;rique
                     </span>
-                    <span class="hidden rounded-full border border-cyber-300/20 bg-cyber-400/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-cyber-100/92 shadow-[0_0_22px_rgba(103,232,249,0.16)] sm:inline-flex">
+                    <span class="hidden rounded-full border border-cyber-300/[0.20] bg-cyber-400/[0.10] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-cyber-100/[0.92] shadow-[0_0_22px_rgba(103,232,249,0.16)] sm:inline-flex">
                       Signal premium
                     </span>
                   </div>
 
-                  <div class="relative mt-4 overflow-hidden rounded-[26px] border border-cyber-300/16 bg-[radial-gradient(circle_at_50%_0%,rgba(103,232,249,0.22),transparent_36%),linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_44px_rgba(4,8,22,0.26)]">
-                    <div class="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyber-300/65 to-transparent" aria-hidden="true"></div>
-                    <div class="absolute left-4 top-5 h-16 w-16 rounded-full border border-cyber-300/10 bg-cyber-400/8 blur-[0.5px]" aria-hidden="true"></div>
+                  <div class="relative mt-4 overflow-hidden rounded-[26px] border border-cyber-300/[0.16] bg-[radial-gradient(circle_at_50%_0%,rgba(103,232,249,0.22),transparent_36%),linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_44px_rgba(4,8,22,0.26)]">
+                    <div class="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyber-300/[0.65] to-transparent" aria-hidden="true"></div>
+                    <div class="absolute left-4 top-5 h-16 w-16 rounded-full border border-cyber-300/10 bg-cyber-400/[0.08] blur-[0.5px]" aria-hidden="true"></div>
                     <div class="absolute right-4 top-4 hidden flex-wrap justify-end gap-2 sm:flex" aria-hidden="true">
-                      <span class="rounded-full border border-white/10 bg-night-900/75 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-100">
+                      <span class="rounded-full border border-white/[0.10] bg-night-900/[0.75] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-100">
                         3 concepts live
                       </span>
-                      <span class="rounded-full border border-cyber-300/15 bg-cyber-500/12 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-200">
+                      <span class="rounded-full border border-cyber-300/[0.15] bg-cyber-500/[0.12] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyber-200">
                         Responsive first
                       </span>
                     </div>
@@ -551,7 +145,7 @@
                   </div>
 
                   <div class="mt-4 grid gap-3">
-                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/[0.10] bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
                       <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-400 via-cyber-300 to-transparent" aria-hidden="true"></div>
                       <p class="compact-label pl-4">Pour qui</p>
                       <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
@@ -559,7 +153,7 @@
                       </p>
                     </article>
 
-                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-cyber-300/20 bg-[linear-gradient(135deg,rgba(103,232,249,0.12),rgba(255,255,255,0.04))] px-4 py-3.5 shadow-[0_18px_40px_rgba(44,107,255,0.18),inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-cyber-300/[0.20] bg-[linear-gradient(135deg,rgba(103,232,249,0.12),rgba(255,255,255,0.04))] px-4 py-3.5 shadow-[0_18px_40px_rgba(44,107,255,0.18),inset_0_1px_0_rgba(255,255,255,0.08)]">
                       <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-300 via-white/70 to-transparent" aria-hidden="true"></div>
                       <p class="compact-label pl-4">Promesse</p>
                       <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
@@ -567,7 +161,7 @@
                       </p>
                     </article>
 
-                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.025))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
+                    <article class="scan-hover relative overflow-hidden rounded-[22px] border border-white/[0.10] bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.025))] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_16px_36px_rgba(3,8,24,0.2)]">
                       <div class="absolute inset-y-3 left-0 w-[3px] rounded-full bg-gradient-to-b from-cyber-500 via-cyber-300 to-transparent" aria-hidden="true"></div>
                       <p class="compact-label pl-4">Objectif</p>
                       <p class="mt-1 pl-4 text-sm font-semibold leading-snug text-white sm:text-base">
@@ -580,22 +174,22 @@
             </div>
           </div>
 
-          <div class="relative z-10 grid gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="relative z-10 grid gap-px border-t border-white/[0.10] bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">3</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">concepts d&eacute;j&agrave; en ligne pour montrer des ambiances r&eacute;elles</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/[0.72]">concepts d&eacute;j&agrave; en ligne pour montrer des ambiances r&eacute;elles</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">1 cap</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">clarifier, rassurer et rendre le contact &eacute;vident</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/[0.72]">clarifier, rassurer et rendre le contact &eacute;vident</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">100 %</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">responsive, lisible et pens&eacute; mobile d'abord</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/[0.72]">responsive, lisible et pens&eacute; mobile d'abord</p>
             </article>
             <article class="stat-card">
               <p class="font-display text-[2.15rem] font-semibold tracking-[-0.06em] text-white sm:text-[2.5rem]">sur mesure</p>
-              <p class="mt-1 text-sm leading-6 text-cyber-200/72">pas de th&egrave;me plaqu&eacute; sur une activit&eacute; qui m&eacute;rite mieux</p>
+              <p class="mt-1 text-sm leading-6 text-cyber-200/[0.72]">pas de th&egrave;me plaqu&eacute; sur une activit&eacute; qui m&eacute;rite mieux</p>
             </article>
           </div>
         </div>
@@ -605,7 +199,7 @@
         <div class="reveal stagger-1 max-w-3xl">
           <p class="compact-label">Cr&eacute;ations</p>
           <h2 class="section-title mt-3">Trois concepts en ligne dans une lecture plus premium.</h2>
-          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
+          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/[0.72] sm:text-lg">
             Les cartes projet restent immersives, mais elles adoptent maintenant
             une pr&eacute;sentation plus l&eacute;g&egrave;re, plus technologique et plus coh&eacute;rente avec
             le reste du syst&egrave;me visuel.
@@ -631,7 +225,7 @@
                 loading="eager"
                 decoding="async"
               >
-              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+              <span class="relative z-10 rounded-full border border-white/[0.15] bg-night-900/[0.65] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 01
               </span>
             </a>
@@ -640,7 +234,7 @@
                 <p class="compact-label">Restaurant / front de mer</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">Quai Ouest</h3>
               </div>
-              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+              <p class="mt-3 text-sm leading-7 text-cyber-200/[0.72] lg:min-h-[168px]">
                 Une vitrine plus immersive, plus atmosph&eacute;rique, qui fait sentir le
                 lieu, la lumi&egrave;re et le rythme avant le contenu d&eacute;taill&eacute;.
               </p>
@@ -673,7 +267,7 @@
                 loading="eager"
                 decoding="async"
               >
-              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+              <span class="relative z-10 rounded-full border border-white/[0.15] bg-night-900/[0.65] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 02
               </span>
             </a>
@@ -682,7 +276,7 @@
                 <p class="compact-label">Restaurant / chaleur &eacute;ditoriale</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Petite Folie</h3>
               </div>
-              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+              <p class="mt-3 text-sm leading-7 text-cyber-200/[0.72] lg:min-h-[168px]">
                 Une direction plus &eacute;l&eacute;gante, plus &eacute;ditoriale, qui combine chaleur,
                 confort et raffinement dans une interface plus douce.
               </p>
@@ -715,7 +309,7 @@
                 loading="lazy"
                 decoding="async"
               >
-              <span class="relative z-10 rounded-full border border-white/15 bg-night-900/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
+              <span class="relative z-10 rounded-full border border-white/[0.15] bg-night-900/[0.65] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyber-100">
                 Concept 03
               </span>
             </a>
@@ -724,7 +318,7 @@
                 <p class="compact-label">Boulangerie / commerce artisanal</p>
                 <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white lg:min-h-[64px]">La Boulangerie du Kreisker</h3>
               </div>
-              <p class="mt-3 text-sm leading-7 text-cyber-200/72 lg:min-h-[168px]">
+              <p class="mt-3 text-sm leading-7 text-cyber-200/[0.72] lg:min-h-[168px]">
                 Une vitrine plus directe et plus claire, qui met en avant le
                 produit, l'identit&eacute; locale et l'intention de marque.
               </p>
@@ -745,7 +339,7 @@
         <div class="reveal stagger-1 max-w-3xl">
           <p class="compact-label">Approche</p>
           <h2 class="section-title mt-3">Un bon site vitrine doit &ecirc;tre net, incarn&eacute; et d&eacute;sir&eacute;.</h2>
-          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72 sm:text-lg">
+          <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/[0.72] sm:text-lg">
             Le redesign part d'une logique simple : plus de clart&eacute;, moins de masse
             visuelle, plus de pr&eacute;cision et une vraie signature high-tech. On garde
             l'effet sur mesure, mais on le traduit avec une mati&egrave;re visuelle plus
@@ -759,7 +353,7 @@
             <h3 class="mt-3 max-w-[18ch] font-display text-2xl font-semibold tracking-[-0.05em] text-white sm:text-[2.1rem]">
               Une interface qui fait ressentir de la ma&icirc;trise avant m&ecirc;me la premi&egrave;re lecture.
             </h3>
-            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
+            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/[0.72]">
               L'ambiance devient plus cyber-luxury : fond nuit profond, lueurs
               m&eacute;talliques, surfaces en verre, accents bleu &eacute;lectrique et d&eacute;tails
               fins. Le tout reste clair, lisible et a&eacute;r&eacute;.
@@ -772,7 +366,7 @@
               <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
                 Une hi&eacute;rarchie plus propre
               </h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Plus de contraste, plus de blancs, plus d'alignement et moins de
                 ruptures lourdes entre les blocs.
               </p>
@@ -783,7 +377,7 @@
               <h3 class="mt-2 font-display text-xl font-semibold tracking-[-0.05em] text-white">
                 Verre, m&eacute;tal, lueur
               </h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Les cartes deviennent plus fines, avec des bordures m&eacute;talliques,
                 un glow bleu l&eacute;ger et un fond plus translucide.
               </p>
@@ -797,7 +391,7 @@
           <div class="reveal stagger-1 panel-metal rounded-[26px] px-5 py-5 sm:px-6">
             <p class="compact-label">Cadre</p>
             <h2 class="section-title mt-3 max-w-[12ch]">Un projet court, clair et sans tunnel.</h2>
-            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/72">
+            <p class="mt-3 max-w-2xl text-base leading-8 text-cyber-200/[0.72]">
               On part d'une activit&eacute; r&eacute;elle, d'une intention commerciale et d'un
               ton visuel. Ensuite on compose, on affine et on met en ligne une
               pr&eacute;sence d&eacute;j&agrave; haut de gamme.
@@ -823,7 +417,7 @@
             <article class="reveal stagger-2 panel-glass rounded-[24px] px-5 py-5 scan-hover">
               <p class="compact-label">01</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Cadrer</h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Clarifier le message, la cible, les preuves et l'action que la page
                 doit rendre naturelle.
               </p>
@@ -832,7 +426,7 @@
             <article class="reveal stagger-3 panel-glass rounded-[24px] px-5 py-5 scan-hover lg:mt-6">
               <p class="compact-label">02</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Composer</h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Construire une direction plus nette, plus high-tech et plus coh&eacute;rente
                 sur chaque bloc.
               </p>
@@ -841,7 +435,7 @@
             <article class="reveal stagger-3 panel-glass rounded-[24px] px-5 py-5 scan-hover">
               <p class="compact-label">03</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">D&eacute;velopper</h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Int&eacute;grer proprement, garantir la lisibilit&eacute; et garder un rendu
                 solide en desktop comme en mobile.
               </p>
@@ -850,7 +444,7 @@
             <article class="reveal stagger-4 panel-glass rounded-[24px] px-5 py-5 scan-hover lg:mt-6">
               <p class="compact-label">04</p>
               <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Lancer</h3>
-              <p class="mt-2 text-sm leading-7 text-cyber-200/72">
+              <p class="mt-2 text-sm leading-7 text-cyber-200/[0.72]">
                 Ajuster les derniers d&eacute;tails et publier une vitrine d&eacute;j&agrave; premium,
                 claire et m&eacute;morable.
               </p>
@@ -860,7 +454,7 @@
       </section>
 
       <section class="mx-auto mt-8 max-w-[1320px] pb-6" id="contact">
-        <div class="reveal stagger-1 relative overflow-hidden rounded-[28px] border border-cyber-300/15 bg-[linear-gradient(135deg,rgba(12,15,24,0.96),rgba(18,24,36,0.92))] px-5 py-6 shadow-shell sm:px-6">
+        <div class="reveal stagger-1 relative overflow-hidden rounded-[28px] border border-cyber-300/[0.15] bg-[linear-gradient(135deg,rgba(12,15,24,0.96),rgba(18,24,36,0.92))] px-5 py-6 shadow-shell sm:px-6">
           <div class="absolute inset-y-0 right-0 w-[42%] bg-[radial-gradient(circle_at_top_right,rgba(125,232,255,0.16),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(202,126,76,0.24),transparent_36%)]"></div>
           <div class="relative z-10 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
@@ -868,7 +462,7 @@
               <h2 class="section-title mt-3 max-w-[14ch]">
                 Une vitrine haut de gamme qui reste claire, humaine et sur mesure.
               </h2>
-              <p class="mt-3 max-w-3xl text-base leading-8 text-cyber-200/76 sm:text-lg">
+              <p class="mt-3 max-w-3xl text-base leading-8 text-cyber-200/[0.76] sm:text-lg">
                 Le redesign garde le fond artisanal, mais il l'exprime dans une
                 mati&egrave;re plus premium, plus lumineuse et plus contemporaine. Si une
                 activit&eacute; a du caract&egrave;re, elle peut aussi avoir une pr&eacute;sence digitale
@@ -878,7 +472,7 @@
 
             <div class="grid gap-3">
               <a class="metal-button focus-ring min-w-[240px] justify-center" href="./contact.html">Ouvrir la page contact</a>
-              <p class="max-w-[280px] text-sm leading-6 text-cyber-200/66" id="contact-email-note">
+              <p class="max-w-[280px] text-sm leading-6 text-cyber-200/[0.66]" id="contact-email-note">
                 Les coordonn&eacute;es directes sont en cours de configuration. La page
                 contact est d&eacute;j&agrave; en place pour compl&eacute;ter ce point avant mise en ligne.
               </p>
@@ -892,17 +486,17 @@
       <div class="panel-glass flex flex-col gap-4 rounded-[24px] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p class="font-display text-lg font-semibold tracking-[-0.05em] text-white">Studio B0ucher</p>
-          <p class="mt-1 max-w-xl text-sm leading-6 text-cyber-200/68">
+          <p class="mt-1 max-w-xl text-sm leading-6 text-cyber-200/[0.68]">
             Sites vitrines sur mesure pour lieux, maisons et activit&eacute;s locales avec une direction claire, premium et contemporaine.
           </p>
         </div>
         <nav class="flex flex-wrap gap-2" aria-label="Liens de pied de page">
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./a-propos.html">&Agrave; propos</a>
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./contact.html">Contact</a>
-          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/90 transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./politique-confidentialite.html">Confidentialit&eacute;</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#approche">Approche</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#creations">Cr&eacute;ations</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="#cadre">Cadre</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./a-propos.html">&Agrave; propos</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./contact.html">Contact</a>
+          <a class="rounded-full px-4 py-2 text-sm font-medium text-cyber-200/[0.90] transition hover:bg-white/[0.04] hover:text-white focus-ring" href="./politique-confidentialite.html">Confidentialit&eacute;</a>
         </nav>
       </div>
     </footer>
@@ -911,6 +505,10 @@
       const navToggle = document.querySelector("[data-nav-toggle]");
       const siteNav = document.querySelector("#site-nav");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!reduceMotion) {
+        document.documentElement.classList.add("motion-ready");
+      }
 
       if (navToggle && siteNav) {
         const syncNavState = (isOpen = false) => {
@@ -964,3 +562,4 @@
     </script>
   </body>
 </html>
+
