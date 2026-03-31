@@ -5,21 +5,24 @@ main#contenu>section+section{margin-top:clamp(4.5rem,8vw,6.75rem)}
 .section-lead,.section-copy{color:rgb(var(--cyber-200)/.78);line-height:1.82}
 .section-lead{max-width:42rem;font-size:clamp(1.02rem,1.3vw,1.12rem)}
 .section-copy{font-size:1rem}
+.hero-copy{max-width:72rem;margin:0 auto;display:grid;justify-items:center;text-align:center}
+.hero-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.7rem,9vw,5.15rem);font-weight:700;line-height:.9;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 10px 30px rgba(2,4,10,.16)}
+.hero-title{max-width:11ch}
+.hero-lead{max-width:58rem;margin-left:auto;margin-right:auto}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem}
 .info-grid{display:grid;gap:1rem}
 .feature-card{display:grid;grid-template-rows:auto auto 1fr;padding:1.35rem}
 .feature-bullets{display:grid;gap:.7rem;margin-top:1rem;padding-left:1.1rem}
 .feature-bullets li{color:rgb(var(--cyber-200)/.8);line-height:1.65}
 .feature-bullets li::marker{color:rgb(var(--cyber-400))}
-.pricing-layout{display:grid;gap:1.25rem;max-width:980px}
+.pricing-layout{display:grid;gap:1.25rem;max-width:1080px;width:100%}
 .pricing-intro{position:relative;overflow:hidden}
 .pricing-intro:after{content:"";position:absolute;right:-2rem;bottom:-3rem;width:10rem;height:10rem;border-radius:9999px;background:radial-gradient(circle,rgb(var(--signal-400)/.18),transparent 62%);pointer-events:none}
 .pricing-highlight{font-family:Gloock,Times New Roman,serif;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;letter-spacing:-.05em;color:#fff}
 .pricing-list{display:grid;gap:.75rem;padding-left:1.15rem}
 .pricing-list li{color:rgb(var(--cyber-200)/.82);line-height:1.7}
 .pricing-list li::marker{color:rgb(var(--cyber-400))}
-.pricing-meta-list{display:grid;gap:.85rem;padding-top:1rem;border-top:1px solid hsla(0,0%,100%,.08)}
-.pricing-meta-list li{display:grid;gap:.35rem;color:rgb(var(--cyber-200)/.76);line-height:1.68}
-.pricing-meta-label{font-family:IBM Plex Mono,ui-monospace,SFMono-Regular,monospace;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgb(var(--cyber-400)/.88)}
 .pricing-note{margin-top:1rem;max-width:36rem;font-size:.95rem;line-height:1.65;color:rgb(var(--cyber-200)/.68)}
 .process-list{display:grid;gap:0;margin-top:.5rem;padding:0;border-top:1px solid hsla(0,0%,100%,.08)}
 .process-step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem;align-items:start;padding:1.25rem 0;border-bottom:1px solid hsla(0,0%,100%,.08)}
