@@ -27,12 +27,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    >
+    <link rel="stylesheet" href="assets/fonts.css">
     <link rel="stylesheet" href="assets/site-pages.css">
     <script type="application/ld+json">
       {
@@ -79,25 +74,36 @@
           <div class="contact-hero-grid">
             <div>
               <p class="eyebrow">Contact</p>
-              <h1>Parler du projet et savoir vite si c'est le bon budget.</h1>
+              <h1>Parler du projet et savoir vite si le cadre colle.</h1>
               <p class="lead">
                 Studio B0ucher est bas&eacute; en Bretagne et accompagne les artisans,
                 restaurants et commerces qui veulent un site vitrine plus clair,
                 plus rassurant et plus facile &agrave; contacter.
               </p>
               <ul class="contact-points-list">
-                <li>Formulaire rapide en 4 champs</li>
+                <li>Formulaire simple en 4 champs</li>
                 <li>Rep&egrave;re de base : 800 &euro; le site vitrine livr&eacute;</li>
-                <li>R&eacute;ponse par e-mail sous 48h ouvr&eacute;es en g&eacute;n&eacute;ral</li>
-                <li>Appel d&eacute;couverte gratuit de 15 minutes si besoin</li>
+                <li>Premier retour sous 48h ouvr&eacute;es en g&eacute;n&eacute;ral</li>
+                <li>Si un appel aide, on le cale apr&egrave;s le premier message</li>
               </ul>
               <div class="hero-actions">
-                <a class="button button-secondary focus-ring" href="mailto:boucher.kilian.pro@gmail.com?subject=Appel%20d%C3%A9couverte%2015%20min">Appel d&eacute;couverte 15 min</a>
-                <a class="button button-secondary focus-ring" href="https://www.facebook.com/b0uch3rmx" target="_blank" rel="noreferrer">Ouvrir Facebook</a>
+                <a class="button button-primary focus-ring" href="#contact-form">Remplir le brief</a>
+                <button
+                  class="button button-secondary focus-ring"
+                  type="button"
+                  data-copy-email
+                  data-copy-value="boucher.kilian.pro@gmail.com"
+                  aria-describedby="contact-copy-status"
+                >
+                  Copier l'e-mail
+                </button>
               </div>
+              <p class="form-status" id="contact-copy-status" data-copy-status role="status" aria-live="polite"></p>
+              <p class="contact-form-intro">Facebook reste disponible en secours, mais l'e-mail reste le canal principal.</p>
             </div>
 
             <form
+              id="contact-form"
               class="contact-form-shell"
               data-contact-form
               data-mailto="boucher.kilian.pro@gmail.com"
@@ -114,7 +120,7 @@
 
               <div class="contact-form-header">
                 <p class="eyebrow">Brief rapide</p>
-                <p class="contact-form-intro">Quelques lignes suffisent pour lancer l'&eacute;change.</p>
+                <p class="contact-form-intro">Quelques lignes suffisent. Je reviens ensuite avec un avis clair sur la suite.</p>
               </div>
 
               <div class="contact-form-grid">
@@ -151,6 +157,22 @@
 
         <section class="grid grid-2">
           <article class="panel">
+            <h2>Ce qu'il faut m'envoyer</h2>
+            <ul>
+              <li>Le nom de l'activit&eacute; et ce qu'elle propose</li>
+              <li>Le besoin principal : cr&eacute;ation, refonte ou souci &agrave; corriger</li>
+              <li>Une adresse e-mail pour te r&eacute;pondre simplement</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h2>Ce que tu re&ccedil;ois ensuite</h2>
+            <ul>
+              <li>Un retour rapide sur la faisabilit&eacute;</li>
+              <li>Un rep&egrave;re de budget si le projet entre dans le cadre</li>
+              <li>La meilleure prochaine &eacute;tape pour avancer sans perdre de temps</li>
+            </ul>
+          </article>
+          <article class="panel">
             <h2>Coordonn&eacute;es directes</h2>
             <ul>
               <li>E-mail : boucher.kilian.pro@gmail.com</li>
@@ -159,11 +181,11 @@
             </ul>
           </article>
           <article class="panel">
-            <h2>Avant le premier &eacute;change</h2>
+            <h2>Comment on peut &eacute;changer</h2>
             <ul>
-              <li>Pas besoin d'avoir un brief parfait pour &eacute;crire</li>
-              <li>Une activit&eacute;, un besoin principal et un e-mail suffisent</li>
-              <li>Le canal de r&eacute;ponse s'adapte ensuite &agrave; la discussion</li>
+              <li>E-mail pour le premier contact</li>
+              <li>Appel si utile apr&egrave;s le premier message</li>
+              <li>Pas de t&eacute;l&eacute;phone affich&eacute; en ligne pour &eacute;viter le d&eacute;marchage</li>
             </ul>
           </article>
         </section>
@@ -174,7 +196,7 @@
             <a class="focus-ring" href="mailto:boucher.kilian.pro@gmail.com">boucher.kilian.pro@gmail.com</a>
             ou
             <a class="focus-ring" href="https://www.facebook.com/b0uch3rmx" target="_blank" rel="noreferrer">Facebook</a>.
-            Les messages re&ccedil;us sont utilis&eacute;s uniquement pour r&eacute;pondre &agrave; la demande et orienter le projet.
+            Les messages re&ccedil;us sont utilis&eacute;s uniquement pour r&eacute;pondre &agrave; la demande, orienter le projet et, si besoin, caler un appel.
           </div>
         </section>
       </main>
