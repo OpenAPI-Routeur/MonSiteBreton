@@ -1,5 +1,6 @@
 (() => {
   const forms = document.querySelectorAll("[data-contact-form]");
+  const copyButtons = document.querySelectorAll("[data-copy-email]");
 
   const buildMailto = (form) => {
     const email = form.dataset.mailto || "boucher.kilian.pro@gmail.com";
@@ -98,6 +99,36 @@
           submitButton.textContent = defaultLabel;
         }
       }
+    });
+  });
+
+  copyButtons.forEach((button) => {
+    const defaultLabel = button.textContent;
+    const statusNodeId = button.getAttribute("aria-describedby");
+    const statusNode = statusNodeId
+      ? document.getElementById(statusNodeId)
+      : document.querySelector("[data-copy-status]");
+
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copyValue || "";
+
+      if (!value) {
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "E-mail copie";
+        setStatus(statusNode, "Adresse copiee. Vous pouvez la coller ou envoyer un message quand vous voulez.", "success");
+      } catch (error) {
+        setStatus(statusNode, "La copie automatique n'est pas disponible ici. Votre messagerie va s'ouvrir.", "warning");
+        window.location.href = `mailto:${value}`;
+        return;
+      }
+
+      window.setTimeout(() => {
+        button.textContent = defaultLabel;
+      }, 2200);
     });
   });
 })();
