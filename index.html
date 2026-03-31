@@ -502,39 +502,39 @@
           </p>
         </div>
 
-        <div class="process-grid">
-          <article class="reveal stagger-2 panel-metal process-card rounded-[26px] scan-hover">
-            <p class="compact-label">01</p>
-            <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Cadrer</h3>
-            <p class="process-copy">
-              Clarifier l'offre, la cible, les preuves et l'action &agrave; rendre naturelle.
-            </p>
-          </article>
+        <ol class="process-list" aria-label="Les 4 &eacute;tapes du projet">
+          <li class="reveal stagger-2 process-step">
+            <p class="process-index" aria-hidden="true">01</p>
+            <div class="process-body">
+              <h3 class="process-title">Cadrer</h3>
+              <p class="process-copy">Clarifier l'offre, la cible, les preuves et l'action &agrave; rendre naturelle.</p>
+            </div>
+          </li>
 
-          <article class="reveal stagger-3 panel-glass process-card rounded-[24px] scan-hover">
-            <p class="compact-label">02</p>
-            <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Composer</h3>
-            <p class="process-copy">
-              Poser une structure nette et une direction visuelle coh&eacute;rente.
-            </p>
-          </article>
+          <li class="reveal stagger-3 process-step">
+            <p class="process-index" aria-hidden="true">02</p>
+            <div class="process-body">
+              <h3 class="process-title">Composer</h3>
+              <p class="process-copy">Poser une structure nette et une direction visuelle coh&eacute;rente.</p>
+            </div>
+          </li>
 
-          <article class="reveal stagger-3 panel-glass process-card rounded-[24px] scan-hover">
-            <p class="compact-label">03</p>
-            <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">D&eacute;velopper</h3>
-            <p class="process-copy">
-              Int&eacute;grer proprement pour mobile, desktop et prise de contact.
-            </p>
-          </article>
+          <li class="reveal stagger-3 process-step">
+            <p class="process-index" aria-hidden="true">03</p>
+            <div class="process-body">
+              <h3 class="process-title">D&eacute;velopper</h3>
+              <p class="process-copy">Int&eacute;grer proprement pour mobile, desktop et prise de contact.</p>
+            </div>
+          </li>
 
-          <article class="reveal stagger-4 panel-glass process-card rounded-[24px] scan-hover">
-            <p class="compact-label">04</p>
-            <h3 class="mt-2 font-display text-2xl font-semibold tracking-[-0.05em] text-white">Lancer</h3>
-            <p class="process-copy">
-              Ajuster, publier et livrer une base pr&ecirc;te &agrave; &eacute;voluer.
-            </p>
-          </article>
-        </div>
+          <li class="reveal stagger-4 process-step">
+            <p class="process-index" aria-hidden="true">04</p>
+            <div class="process-body">
+              <h3 class="process-title">Lancer</h3>
+              <p class="process-copy">Ajuster, publier et livrer une base pr&ecirc;te &agrave; &eacute;voluer.</p>
+            </div>
+          </li>
+        </ol>
       </section>
 
       <section class="mx-auto mt-8 max-w-[1320px] pb-6" id="contact">
@@ -557,30 +557,6 @@
                 <li>R&eacute;ponse par e-mail sous 48h ouvr&eacute;es en g&eacute;n&eacute;ral</li>
                 <li>Appel d&eacute;couverte gratuit de 15 minutes si besoin</li>
               </ul>
-
-              <div class="contact-faq" id="faq" data-faq-accordion>
-                <div class="contact-faq-header">
-                  <p class="compact-label faq-kicker">Questions rapides</p>
-                  <p class="contact-faq-note">L'essentiel avant d'envoyer le brief.</p>
-                </div>
-
-                <details class="faq-item faq-item-compact">
-                  <summary>Combien de temps faut-il ?</summary>
-                  <p>Entre 2 et 4 semaines en g&eacute;n&eacute;ral, selon le contenu disponible et la rapidit&eacute; des retours.</p>
-                </details>
-
-                <details class="faq-item faq-item-compact">
-                  <summary>Faut-il avoir tout le contenu au d&eacute;part ?</summary>
-                  <p>Non. Il suffit d'avoir l'activit&eacute;, l'offre principale et quelques rep&egrave;res pour poser une base claire.</p>
-                </details>
-
-                <details class="faq-item faq-item-compact">
-                  <summary>H&eacute;bergement et nom de domaine : comment &ccedil;a se passe ?</summary>
-                  <p>Le studio peut conseiller et aider &agrave; la mise en ligne, mais ces frais restent en g&eacute;n&eacute;ral externes.</p>
-                </details>
-
-                <a class="text-link focus-ring faq-text-link" href="#contact-form">Une autre question ? Ajoute-la au brief.</a>
-              </div>
 
               <div class="mt-5 flex flex-wrap gap-3">
                 <a class="outline-button focus-ring" href="mailto:boucher.kilian.pro@gmail.com?subject=Appel%20d%C3%A9couverte%2015%20min">Appel d&eacute;couverte 15 min</a>
@@ -643,6 +619,32 @@
               </p>
             </form>
           </div>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-8 max-w-[920px] faq-section" id="faq">
+        <div class="faq-shell" data-faq-accordion>
+          <div class="faq-shell-header">
+            <p class="compact-label faq-kicker">Questions rapides</p>
+            <p class="faq-shell-note">Deux ou trois rep&egrave;res, puis le plus simple reste d'&eacute;crire.</p>
+          </div>
+
+          <details class="faq-item faq-item-compact">
+            <summary>Combien de temps faut-il ?</summary>
+            <p>En g&eacute;n&eacute;ral, entre 2 et 4 semaines selon le contenu disponible et la rapidit&eacute; des retours.</p>
+          </details>
+
+          <details class="faq-item faq-item-compact">
+            <summary>Faut-il avoir tout le contenu au d&eacute;part ?</summary>
+            <p>Non. Il suffit d'avoir l'activit&eacute;, l'offre principale et quelques rep&egrave;res pour poser une base claire.</p>
+          </details>
+
+          <details class="faq-item faq-item-compact">
+            <summary>H&eacute;bergement et domaine : comment &ccedil;a se passe ?</summary>
+            <p>Le studio peut conseiller et aider &agrave; la mise en ligne, mais ces frais restent g&eacute;n&eacute;ralement externes.</p>
+          </details>
+
+          <a class="text-link focus-ring faq-text-link" href="#contact-form">Une autre question ? Ajoute-la au brief.</a>
         </div>
       </section>
 
