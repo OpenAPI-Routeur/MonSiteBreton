@@ -547,7 +547,8 @@
               data-contact-form
               data-mailto="boucher.kilian.pro@gmail.com"
               data-success-message="Merci, la demande est partie. Le studio reviendra vers toi rapidement."
-              action="https://formsubmit.co/ajax/boucher.kilian.pro@gmail.com"
+              action="https://formsubmit.co/boucher.kilian.pro@gmail.com"
+              data-ajax-action="https://formsubmit.co/ajax/boucher.kilian.pro@gmail.com"
               method="POST"
             >
               <input type="hidden" name="_subject" value="Nouveau projet depuis la page d'accueil Studio B0ucher">
@@ -559,7 +560,7 @@
 
               <div class="contact-form-header">
                 <p class="compact-label">Brief rapide</p>
-                <p class="contact-form-note">4 champs, 2 minutes, puis retour clair par e-mail.</p>
+                <p class="contact-form-note">4 champs, 2 minutes, puis retour clair par e-mail, sans relance automatique.</p>
               </div>
 
               <div class="contact-form-grid">
@@ -570,7 +571,7 @@
 
                 <label class="form-field">
                   <span>Activit&eacute;</span>
-                  <input type="text" name="activity" autocomplete="organization-title" placeholder="Restaurant, artisan, commerce..." required>
+                  <input type="text" name="activity" autocomplete="organization" placeholder="Restaurant, artisan, commerce..." required>
                 </label>
 
                 <label class="form-field form-field-full">
@@ -580,19 +581,19 @@
 
                 <label class="form-field form-field-full">
                   <span>E-mail</span>
-                  <input type="email" name="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                  <input type="email" name="email" autocomplete="email" placeholder="vous@activite.fr" required>
                 </label>
               </div>
 
               <div class="contact-form-actions">
-                <button class="metal-button focus-ring" type="submit">Envoyer la demande</button>
+                <button class="metal-button focus-ring" type="submit">Recevoir un premier retour</button>
                 <a class="text-link focus-ring" href="mailto:boucher.kilian.pro@gmail.com?subject=Demande%20de%20site%20vitrine">Pr&eacute;f&eacute;rer l'e-mail direct</a>
               </div>
 
               <p class="form-status" data-form-status role="status" aria-live="polite"></p>
               <p class="max-w-[320px] text-sm leading-6 text-cyber-200/[0.66]" id="contact-email-note">
-                Si l'envoi automatique ne passe pas, la messagerie locale s'ouvrira
-                avec les champs pr&eacute;remplis.
+                Pas de newsletter ni de relance automatique. Si l'envoi automatique
+                ne passe pas, la messagerie locale s'ouvrira avec les champs pr&eacute;remplis.
               </p>
             </form>
           </div>

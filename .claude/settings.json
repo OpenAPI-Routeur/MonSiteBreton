@@ -1,0 +1,24 @@
+{
+  "project": {
+    "name": "Studio B0ucher",
+    "type": "site-vitrine-statique",
+    "language": "fr",
+    "hosting": "github-pages",
+    "url": "https://openapi-routeur.github.io/MonSiteBreton/"
+  },
+  "agent": {
+    "default_language": "fr",
+    "auto_commit": false,
+    "confirm_destructive_actions": true
+  },
+  "rules": {
+    "enforce": [
+      "code-style",
+      "seo",
+      "accessibilite",
+      "performance",
+      "git-workflow",
+      "project-structure"
+    ]
+  }
+}

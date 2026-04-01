@@ -47,6 +47,13 @@
           "Merci, la demande a bien ete envoyee. Le studio reviendra vers vous rapidement.",
         "success"
       );
+
+      if (window.history.replaceState) {
+        url.searchParams.delete("sent");
+        const query = url.searchParams.toString();
+        const cleanUrl = `${url.pathname}${query ? `?${query}` : ""}${url.hash}`;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
     }
 
     form.addEventListener("submit", async (event) => {
@@ -57,7 +64,7 @@
       }
 
       const formData = new FormData(form);
-      const action = form.getAttribute("action");
+      const action = form.dataset.ajaxAction || form.getAttribute("action") || "";
 
       if (submitButton) {
         submitButton.disabled = true;
@@ -67,6 +74,10 @@
       setStatus(statusNode, "Envoi en cours...", "info");
 
       try {
+        if (!action) {
+          throw new Error("missing-action");
+        }
+
         const response = await fetch(action, {
           method: "POST",
           body: formData,

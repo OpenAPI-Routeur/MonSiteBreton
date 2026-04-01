@@ -1,0 +1,19 @@
+{
+  "site": {
+    "name": "Studio B0ucher",
+    "shortName": "B0ucher",
+    "baseUrl": "https://openapi-routeur.github.io/MonSiteBreton",
+    "basePath": "/MonSiteBreton",
+    "ogImagePath": "/assets/og-studio-b0ucher.png"
+  },
+  "contact": {
+    "email": "boucher.kilian.pro@gmail.com",
+    "facebookUrl": "https://www.facebook.com/b0uch3rmx"
+  },
+  "pages": {
+    "home": "/",
+    "about": "/a-propos.html",
+    "contact": "/contact.html",
+    "privacy": "/politique-confidentialite.html"
+  }
+}

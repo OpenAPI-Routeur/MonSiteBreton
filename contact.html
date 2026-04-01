@@ -108,7 +108,8 @@
               data-contact-form
               data-mailto="boucher.kilian.pro@gmail.com"
               data-success-message="Merci, la demande a bien &eacute;t&eacute; envoy&eacute;e. Le studio reviendra vers vous rapidement."
-              action="https://formsubmit.co/ajax/boucher.kilian.pro@gmail.com"
+              action="https://formsubmit.co/boucher.kilian.pro@gmail.com"
+              data-ajax-action="https://formsubmit.co/ajax/boucher.kilian.pro@gmail.com"
               method="POST"
             >
               <input type="hidden" name="_subject" value="Nouveau projet depuis la page contact Studio B0ucher">
@@ -120,7 +121,7 @@
 
               <div class="contact-form-header">
                 <p class="eyebrow">Brief rapide</p>
-                <p class="contact-form-intro">Quelques lignes suffisent. Je reviens ensuite avec un avis clair sur la suite.</p>
+                <p class="contact-form-intro">Quelques lignes suffisent. Je reviens ensuite avec un avis clair sur la suite, sans relance automatique.</p>
               </div>
 
               <div class="contact-form-grid">
@@ -131,7 +132,7 @@
 
                 <label class="form-field">
                   <span>Activit&eacute;</span>
-                  <input type="text" name="activity" autocomplete="organization-title" placeholder="Restaurant, artisan, commerce..." required>
+                  <input type="text" name="activity" autocomplete="organization" placeholder="Restaurant, artisan, commerce..." required>
                 </label>
 
                 <label class="form-field form-field-full">
@@ -141,16 +142,17 @@
 
                 <label class="form-field form-field-full">
                   <span>E-mail</span>
-                  <input type="email" name="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                  <input type="email" name="email" autocomplete="email" placeholder="vous@activite.fr" required>
                 </label>
               </div>
 
               <div class="contact-form-actions">
-                <button class="button button-primary focus-ring" type="submit">Envoyer la demande</button>
+                <button class="button button-primary focus-ring" type="submit">Recevoir un premier retour</button>
                 <a class="text-link focus-ring" href="mailto:boucher.kilian.pro@gmail.com">Pr&eacute;f&eacute;rer l'e-mail direct</a>
               </div>
 
               <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+              <p class="contact-form-intro">Pas de newsletter, pas de d&eacute;marchage, juste une r&eacute;ponse humaine et claire.</p>
             </form>
           </div>
         </section>
